@@ -2,7 +2,7 @@ import {
 	TextDocument,
 } from 'vscode';
 
-enum NextLineToRead {
+const enum NextLineToRead {
 	Current,
 	Higher,
 	Lower,
