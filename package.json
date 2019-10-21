@@ -5,7 +5,7 @@
 	"version": "0.1.0",
 	"publisher": "usernamehw",
 	"engines": {
-		"vscode": "^1.39.0"
+		"vscode": "^1.35.0"
 	},
 	"repository": {
 		"type": "git",
@@ -30,7 +30,7 @@
 				"title": "Activate Find-Jump in selection mode"
 			}
 		],
-		"keybindings":[
+		"keybindings": [
 			{
 				"command": "findJump.activate",
 				"key": "ctrl+;"
@@ -44,7 +44,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "^10.14.22",
-		"@types/vscode": "^1.39.0",
+		"@types/vscode": "^1.35.0",
 		"@typescript-eslint/eslint-plugin": "^2.4.0",
 		"@typescript-eslint/parser": "^2.4.0",
 		"eslint": "^6.5.1",
