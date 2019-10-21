@@ -1,0 +1,57 @@
+{
+	"name": "find-jump",
+	"displayName": "Find => Jump",
+	"description": "Like Ace Jump, but better. Quickly move cursor to visible location",
+	"version": "0.1.0",
+	"publisher": "usernamehw",
+	"engines": {
+		"vscode": "^1.39.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/usernamehw/vscode-find-jump"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:findJump.activate",
+		"onCommand:findJump.activateWithSelection"
+	],
+	"main": "./dist/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "findJump.activate",
+				"title": "Activate Find-Jump"
+			},
+			{
+				"command": "findJump.activateWithSelection",
+				"title": "Activate Find-Jump in selection mode"
+			}
+		],
+		"keybindings":[
+			{
+				"command": "findJump.activate",
+				"key": "ctrl+;"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "webpack --mode production --colors",
+		"compile": "webpack --mode development",
+		"watch": "webpack --mode development --watch --display=minimal"
+	},
+	"devDependencies": {
+		"@types/node": "^10.14.22",
+		"@types/vscode": "^1.39.0",
+		"@typescript-eslint/eslint-plugin": "^2.4.0",
+		"@typescript-eslint/parser": "^2.4.0",
+		"eslint": "^6.5.1",
+		"friendly-errors-webpack-plugin": "^1.7.0",
+		"ts-loader": "^6.2.0",
+		"typescript": "^3.6.4",
+		"webpack": "^4.41.2",
+		"webpack-cli": "^3.3.9"
+	}
+}
