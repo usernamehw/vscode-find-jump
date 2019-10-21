@@ -2,7 +2,8 @@
 
 Find-Jump works when you type a sequence of characters so that it can narrow down the location to where you want to jump.
 
-![demo gif](https://raw.githubusercontent.com/usernamehw/vscode-find-jump/master/img/demo.gif)
+<!-- ![demo gif](https://raw.githubusercontent.com/usernamehw/vscode-find-jump/master/img/demo.gif) -->
+![](https://raw.githubusercontent.com/msafi/xvsc/master/findJump/demoFiles/demo.gif)
 
 ## How to use Find-Jump
 
