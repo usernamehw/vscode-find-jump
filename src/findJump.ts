@@ -25,7 +25,6 @@ export class FindJump {
 	associationManager = new AssociationManager();
 	activityIndicatorState = 0;
 	activatedWithSelection = false;
-	searchFunctionDebounceTracker: any;
 
 	activate = (textEditor: TextEditor): void => {
 		this.textEditor = textEditor;
