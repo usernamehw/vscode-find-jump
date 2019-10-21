@@ -59,14 +59,7 @@ export class FindJump {
 		this.userInput = input;
 		this.updateStatusBarWithActivityIndicator();
 
-		// clearTimeout(this.searchFunctionDebounceTracker);
-		// this.searchFunctionDebounceTracker = setTimeout(
-		// 	() => {
 		this.performSearch();
-		// this.searchFunctionDebounceTracker = undefined;
-		// 	},
-		// 	0 // 100
-		// );
 	};
 
 	performSearch = (): void => {
