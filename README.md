@@ -12,7 +12,6 @@ When you activate Find-Jump (<kbd>Ctrl</kbd>+<kbd>;</kbd>), you'll see a blinkin
 A few things to note:
 
 * The jump character is always a single letter. Sometimes the jump character needs to be pressed with the SHIFT key, which would be indicated on the jump location like `⇧z`
-* You cannot press ESC to exit Find-Jump (due to VS Code limitation)
 * Pressing the arrow keys, backspace, or the enter key will exit Find-Jump
 * You cannot edit what you've typed into the Find-Jump prompt (due to VS Code limitation)
 * While Find-Jump is active, you can press the activation keybinding again to reset Find-Jump and start over. This somewhat makes up for the inability to edit
