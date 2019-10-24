@@ -1,3 +1,7 @@
+## 0.1.1 `24 Oct 2019`
+
+- ✨ Add setting to change decoration colors
+
 ## 0.1.0 `22 Oct 2019`
 
 - 💥 Forked

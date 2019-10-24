@@ -6,6 +6,8 @@ import {
 	TextEditor,
 } from 'vscode';
 
+import { config } from './extension';
+
 export class AssociationManager {
 	public activeDecorations: TextEditorDecorationType[] = [];
 	public associations: Map<string, Range> = new Map();
@@ -32,10 +34,16 @@ export class AssociationManager {
 			before: {
 				contentText: finalLetter,
 				margin: '0 5px 0 5px',
-				backgroundColor: '#4169E1',
-				border: '3px solid',
-				color: 'white',
-				borderColor: '#4169E1',
+				backgroundColor: config.letterBackground,
+				border: `3px solid ${config.letterBackground}`,
+				color: config.letterForeground,
+			},
+			light: {
+				before: {
+					backgroundColor: config.letterBackgroundLight,
+					borderColor: config.letterBackgroundLight,
+					color: config.letterForegroundLight,
+				},
 			},
 		});
 

@@ -17,15 +17,22 @@ A few things to note:
 * You cannot edit what you've typed into the Find-Jump prompt (due to VS Code limitation)
 * While Find-Jump is active, you can press the activation keybinding again to reset Find-Jump and start over. This somewhat makes up for the inability to edit
 
+## Settings
+
+- `findJump.letterBackground`: Background color of the extension's main decoration: letter to jump.
+- `findJump.letterBackgroundLight`: Background color of the letter for light themes.
+- `findJump.letterForeground`: Color of the extension's main decoration: letter to jump.
+- `findJump.letterForegroundLight`: Color of the letter for light themes.
+
 ## Commands
 
-* `findJump.activate`: which activates Find-Jump
-* `findJump.activateWithSelection`: like `findJump.activate` but will make a selection from the current cursor position to the new cursor position
+- `findJump.activate`: which activates Find-Jump
+- `findJump.activateWithSelection`: like `findJump.activate` but will make a selection from the current cursor position to the new cursor position
 
 # TODO (in the future):
 
 - [x] Remove delay (100ms debounce seems excessive and should be nuked)
-- [ ] Configure colors
+- [x] Configure colors
 - [ ] Option to limit the search in visible area (instead of scanning the entire document)
 - [ ] Option to search in all visible editors (split/grid)
 - [ ] Command to go to the next/previous match

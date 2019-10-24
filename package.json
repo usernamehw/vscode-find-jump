@@ -20,6 +20,31 @@
 	],
 	"main": "./dist/extension",
 	"contributes": {
+		"configuration":{
+			"title": "Find => Jump",
+			"properties": {
+				"findJump.letterBackground": {
+					"type": "string",
+					"default": "#4169E1",
+					"description": "Background color of the extension's main decoration: letter to jump."
+				},
+				"findJump.letterBackgroundLight": {
+					"type": "string",
+					"default": "",
+					"description": "Background color of the letter for light themes."
+				},
+				"findJump.letterForeground": {
+					"type": "string",
+					"default": "#ffffff",
+					"description": "Color of the extension's main decoration: letter to jump."
+				},
+				"findJump.letterForegroundLight": {
+					"type": "string",
+					"default": "",
+					"description": "Color of the letter for light themes."
+				}
+			}
+		},
 		"commands": [
 			{
 				"command": "findJump.activate",
