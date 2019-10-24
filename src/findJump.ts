@@ -5,10 +5,12 @@ import {
 	Range,
 	commands,
 	window,
+	DecorationOptions,
 } from 'vscode';
 import { InlineInput } from './inlineInput';
 import { documentRippleScanner } from './documentRippleScanner';
 import { AssociationManager } from './associationManager';
+import { letterDecorationType } from './extension';
 
 // types
 interface IMatch {
@@ -28,6 +30,7 @@ export class FindJump {
 	activityIndicatorState = 0;
 	activatedWithSelection = false;
 	numberOfMatches = 0;
+	decorationOptions: DecorationOptions[] = [];
 
 	activate = (textEditor: TextEditor): void => {
 		this.textEditor = textEditor;
@@ -69,6 +72,7 @@ export class FindJump {
 	};
 
 	performSearch = (): void => {
+		this.decorationOptions = [];
 		const { matches, availableJumpChars } = this.getMatchesAndAvailableJumpChars();
 
 		if (matches.length > 0) {
@@ -87,8 +91,10 @@ export class FindJump {
 			const { index, value } = match;
 			const range = new Range(index, value.start, index, value.end);
 
-			this.associationManager.createAssociation(availableJumpChar, range, this.textEditor);
+			this.decorationOptions.push(this.associationManager.createAssociation(availableJumpChar, range, this.textEditor));
 		}
+
+		this.textEditor.setDecorations(letterDecorationType, this.decorationOptions);
 	};
 
 	jump = (jumpChar: string): void => {
@@ -167,6 +173,7 @@ export class FindJump {
 		this.isActive = false;
 		this.activatedWithSelection = false;
 		this.userInput = '';
+		this.textEditor.setDecorations(letterDecorationType, []);
 		this.clearActivityIndicator();
 		this.inlineInput.destroy();
 		this.associationManager.dispose();
