@@ -14,6 +14,12 @@
 	"categories": [
 		"Other"
 	],
+	"keywords": [
+		"AceJump",
+		"EasyMotion",
+		"jump",
+		"jumpy"
+	],
 	"activationEvents": [
 		"onCommand:findJump.activate",
 		"onCommand:findJump.activateWithSelection"
