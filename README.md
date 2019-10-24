@@ -34,7 +34,7 @@ A few things to note:
 - [ ] Option to limit the search in visible area (instead of scanning the entire document)
 - [ ] Option to search in all visible editors (split/grid)
 - [ ] Command to go to the next/previous match
-- [ ] Show number of matches
+- [x] Show number of matches in the status bar
 - [x] Show matches in the scrollbar
 - [ ] Option to render decoraitons on top of the text instead of prepending (that moves the entire text)
 - [x] Cancel the mode on <kbd>Esc</kbd> press

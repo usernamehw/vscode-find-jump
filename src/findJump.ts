@@ -27,6 +27,7 @@ export class FindJump {
 	associationManager = new AssociationManager();
 	activityIndicatorState = 0;
 	activatedWithSelection = false;
+	numberOfMatches = 0;
 
 	activate = (textEditor: TextEditor): void => {
 		this.textEditor = textEditor;
@@ -73,6 +74,8 @@ export class FindJump {
 		if (matches.length > 0) {
 			this.associationManager.dispose();
 		}
+
+		this.numberOfMatches = matches.length;
 
 		for (let i = 0; i < matches.length; i++) {
 			if (availableJumpChars[i] === undefined) {
@@ -196,16 +199,16 @@ export class FindJump {
 		const callback = (): void => {
 			// ┆ ┇ ┣ ┫ ╏ ▎▐ ░ ▒ ▓
 			if (this.activityIndicatorState === 1) {
-				this.inlineInput.updateStatusBar(`┃ ${this.userInput} 🔴 ┃`);
+				this.inlineInput.updateStatusBar(`${this.numberOfMatches} ┃ ${this.userInput} 🔴 ┃`);
 				this.activityIndicatorState = 0;
 			} else {
-				this.inlineInput.updateStatusBar(`┃ ${this.userInput} ⚪ ┃`);
+				this.inlineInput.updateStatusBar(`${this.numberOfMatches} ┃ ${this.userInput} ⚪ ┃`);
 				this.activityIndicatorState = 1;
 			}
 		};
 
 		this.inlineInput.updateStatusBar(
-			`┃ ${this.userInput} ${this.activityIndicatorState === 0 ? '🔴' : '⚪'} ┃`
+			`${this.numberOfMatches} ┃ ${this.userInput} ${this.activityIndicatorState === 0 ? '🔴' : '⚪'} ┃`
 		);
 
 		if (this.intervalHandler === undefined) {
