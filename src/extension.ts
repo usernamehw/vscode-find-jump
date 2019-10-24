@@ -21,12 +21,16 @@ export function activate(context: ExtensionContext): void {
 
 	context.subscriptions.push(
 		commands.registerTextEditorCommand(
-			'findJump.activate',
+			`${EXTENSION_NAME}.activate`,
 			findJump.activate
 		),
 		commands.registerTextEditorCommand(
-			'findJump.activateWithSelection',
+			`${EXTENSION_NAME}.activateWithSelection`,
 			findJump.activateWithSelection
+		),
+		commands.registerTextEditorCommand(
+			`${EXTENSION_NAME}.cancel`,
+			findJump.reset
 		)
 	);
 

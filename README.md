@@ -38,7 +38,7 @@ A few things to note:
 - [ ] Command to go to the next/previous match
 - [ ] Show number of matches
 - [ ] Option to render decoraitons on top of the text instead of prepending (that moves the entire text)
-- [ ] Cancel the mode on <kbd>Esc</kbd> press
+- [x] Cancel the mode on <kbd>Esc</kbd> press
 - [ ] Remove last typed character on <kbd>Backspace</kbd>
 - [ ] Go to first match on <kbd>Enter</kbd>
 - [ ] 🐛 Activating the extension must focus the active editor

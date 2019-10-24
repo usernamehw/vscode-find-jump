@@ -53,12 +53,21 @@
 			{
 				"command": "findJump.activateWithSelection",
 				"title": "Activate Find-Jump in selection mode"
+			},
+			{
+				"command": "findJump.cancel",
+				"title": "Find-Jump Cancel"
 			}
 		],
 		"keybindings": [
 			{
 				"command": "findJump.activate",
 				"key": "ctrl+;"
+			},
+			{
+				"command": "findJump.cancel",
+				"key": "escape",
+				"when": "findJumpActive"
 			}
 		]
 	},

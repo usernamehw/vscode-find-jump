@@ -1,3 +1,7 @@
+## 0.1.2 `24 Oct 2019`
+
+- ✨ Press `Esc` to cancel
+
 ## 0.1.1 `24 Oct 2019`
 
 - ✨ Add setting to change decoration colors

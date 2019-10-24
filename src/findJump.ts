@@ -3,6 +3,7 @@ import {
 	TextEditor,
 	TextLine,
 	Range,
+	commands,
 } from 'vscode';
 import { InlineInput } from './inlineInput';
 import { documentRippleScanner } from './documentRippleScanner';
@@ -34,6 +35,8 @@ export class FindJump {
 		}
 
 		this.isActive = true;
+
+		commands.executeCommand('setContext', 'findJumpActive', true);
 
 		this.inlineInput = new InlineInput({
 			textEditor,
@@ -161,6 +164,8 @@ export class FindJump {
 		this.clearActivityIndicator();
 		this.inlineInput.destroy();
 		this.associationManager.dispose();
+
+		commands.executeCommand('setContext', 'findJumpActive', false);
 	};
 
 	updateStatusBarWithActivityIndicator = (): void => {
