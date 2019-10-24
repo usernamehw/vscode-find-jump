@@ -2,6 +2,7 @@
 import vscode, { commands, ExtensionContext, workspace, window, ThemeColor, OverviewRulerLane } from 'vscode';
 import { FindJump } from './findJump';
 import { subscriptions as inlineInputSubscriptions } from './inlineInput';
+import { pickColorType } from './utils';
 
 
 
@@ -52,22 +53,25 @@ export function activate(context: ExtensionContext): void {
 			letterDecorationType.dispose();
 		}
 
+		const letterBackground = pickColorType(config.letterBackground);
+
 		letterDecorationType = window.createTextEditorDecorationType({
 			backgroundColor: new ThemeColor('editor.wordHighlightBackground'),
 			before: {
 				margin: '0 5px 0 5px',
-				backgroundColor: config.letterBackground,
-				border: `3px solid ${config.letterBackground}`,
-				color: config.letterForeground,
+				backgroundColor: letterBackground,
+				border: `3px solid`,
+				borderColor: letterBackground,
+				color: pickColorType(config.letterForeground),
 			},
 			light: {
 				before: {
-					backgroundColor: config.letterBackgroundLight,
-					borderColor: config.letterBackgroundLight,
-					color: config.letterForegroundLight,
+					backgroundColor: pickColorType(config.letterBackgroundLight),
+					borderColor: pickColorType(config.letterBackgroundLight),
+					color: pickColorType(config.letterForegroundLight),
 				},
 			},
-			overviewRulerColor: config.overviewRulerMatchForeground,
+			overviewRulerColor: pickColorType(config.overviewRulerMatchForeground),
 			overviewRulerLane: OverviewRulerLane.Center,
 		});
 	}
