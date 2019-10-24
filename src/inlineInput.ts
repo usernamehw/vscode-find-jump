@@ -40,6 +40,10 @@ export class InlineInput {
 		subscriptions.forEach(subscription => subscription.dispose());
 	};
 
+	public deleteLastCharacter = (): void => {
+		this.input = this.input.slice(0, -1);
+	};
+
 	private readonly _onInput = ({ text }: { text: string }) => {
 		const char = text;
 

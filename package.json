@@ -54,15 +54,23 @@
 		"commands": [
 			{
 				"command": "findJump.activate",
-				"title": "Activate Find-Jump"
+				"title": "Activate",
+				"category": "Find => Jump"
 			},
 			{
 				"command": "findJump.activateWithSelection",
-				"title": "Activate Find-Jump in selection mode"
+				"title": "Activate in selection mode",
+				"category": "Find => Jump"
 			},
 			{
 				"command": "findJump.cancel",
-				"title": "Find-Jump Cancel"
+				"title": "Cancel",
+				"category": "Find => Jump"
+			},
+			{
+				"command": "findJump.backspace",
+				"title": "Backspace",
+				"category": "Find => Jump"
 			}
 		],
 		"keybindings": [
@@ -74,8 +82,33 @@
 				"command": "findJump.cancel",
 				"key": "escape",
 				"when": "findJumpActive"
+			},
+			{
+				"command": "findJump.backspace",
+				"key": "backspace",
+				"when": "findJumpActive && editorTextFocus"
 			}
-		]
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "findJump.activate",
+					"when": "never"
+				},
+				{
+					"command": "findJump.activateWithSelection",
+					"when": "never"
+				},
+				{
+					"command": "findJump.cancel",
+					"when": "never"
+				},
+				{
+					"command": "findJump.backspace",
+					"when": "never"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "webpack --mode production --colors",

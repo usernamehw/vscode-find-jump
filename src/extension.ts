@@ -31,6 +31,10 @@ export function activate(context: ExtensionContext): void {
 		commands.registerTextEditorCommand(
 			`${EXTENSION_NAME}.cancel`,
 			findJump.reset
+		),
+		commands.registerTextEditorCommand(
+			`${EXTENSION_NAME}.backspace`,
+			findJump.backspace
 		)
 	);
 

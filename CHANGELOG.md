@@ -1,10 +1,14 @@
+## 0.1.4 `24 Oct 2019`
+
+- ✨ Press <kbd>Backspace</kbd> to delete last typed character
+
 ## 0.1.3 `24 Oct 2019`
 
 - 🐛 Activating should focus activeTextEditor
 
 ## 0.1.2 `24 Oct 2019`
 
-- ✨ Press `Esc` to cancel
+- ✨ Press <kbd>Esc</kbd> to cancel
 
 ## 0.1.1 `24 Oct 2019`
 

@@ -170,6 +170,27 @@ export class FindJump {
 
 		commands.executeCommand('setContext', 'findJumpActive', false);
 	};
+	/**
+	 * TODO: write description
+	 */
+	backspace = (): void => {
+		switch (this.userInput.length) {
+			case 0: {
+				this.reset();
+				break;
+			}
+			case 1: {
+				this.activate(this.textEditor);
+				break;
+			}
+			default: {
+				this.inlineInput.deleteLastCharacter();
+				this.userInput = this.userInput.slice(0, -1);
+				this.performSearch();
+			}
+		}
+		this.updateStatusBarWithActivityIndicator();
+	};
 
 	updateStatusBarWithActivityIndicator = (): void => {
 		const callback = (): void => {
