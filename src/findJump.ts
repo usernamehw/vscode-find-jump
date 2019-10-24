@@ -4,6 +4,7 @@ import {
 	TextLine,
 	Range,
 	commands,
+	window,
 } from 'vscode';
 import { InlineInput } from './inlineInput';
 import { documentRippleScanner } from './documentRippleScanner';
@@ -33,6 +34,8 @@ export class FindJump {
 		if (this.isActive) {
 			this.reset();
 		}
+
+		window.showTextDocument(textEditor.document);
 
 		this.isActive = true;
 

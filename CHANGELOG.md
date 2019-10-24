@@ -1,3 +1,7 @@
+## 0.1.3 `24 Oct 2019`
+
+- 🐛 Activating should focus activeTextEditor
+
 ## 0.1.2 `24 Oct 2019`
 
 - ✨ Press `Esc` to cancel

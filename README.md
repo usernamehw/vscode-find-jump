@@ -40,4 +40,3 @@ A few things to note:
 - [x] Cancel the mode on <kbd>Esc</kbd> press
 - [ ] Remove last typed character on <kbd>Backspace</kbd>
 - [ ] Go to first match on <kbd>Enter</kbd>
-- [ ] 🐛 Activating the extension must focus the active editor
