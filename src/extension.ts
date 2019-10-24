@@ -10,6 +10,8 @@ export interface IConfig {
 	letterBackgroundLight: string;
 	letterForeground: string;
 	letterForegroundLight: string;
+
+	overviewRulerMatchForeground: string;
 }
 export let config: IConfig;
 

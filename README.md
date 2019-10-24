@@ -20,6 +20,7 @@ A few things to note:
 - `findJump.letterBackgroundLight`: Background color of the letter for light themes.
 - `findJump.letterForeground`: Color of the extension's main decoration: letter to jump.
 - `findJump.letterForegroundLight`: Color of the letter for light themes.
+- `findJump.overviewRulerMatchForeground`: Color of the matches in the scrollbar area.
 
 ## Commands
 
@@ -34,6 +35,7 @@ A few things to note:
 - [ ] Option to search in all visible editors (split/grid)
 - [ ] Command to go to the next/previous match
 - [ ] Show number of matches
+- [x] Show matches in the scrollbar
 - [ ] Option to render decoraitons on top of the text instead of prepending (that moves the entire text)
 - [x] Cancel the mode on <kbd>Esc</kbd> press
 - [x] Remove last typed character on <kbd>Backspace</kbd>

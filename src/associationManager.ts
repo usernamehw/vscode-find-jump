@@ -4,6 +4,7 @@ import {
 	ThemeColor,
 	Range,
 	TextEditor,
+	OverviewRulerLane,
 } from 'vscode';
 
 import { config } from './extension';
@@ -31,6 +32,8 @@ export class AssociationManager {
 					color: config.letterForegroundLight,
 				},
 			},
+			overviewRulerColor: config.overviewRulerMatchForeground,
+			overviewRulerLane: OverviewRulerLane.Center,
 		});
 
 		this.activeDecorations.push(type);
