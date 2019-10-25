@@ -194,8 +194,7 @@ export class FindJump {
 				break;
 			}
 			default: {
-				this.inlineInput.deleteLastCharacter();
-				this.userInput = this.userInput.slice(0, -1);
+				this.userInput = this.inlineInput.deleteLastCharacter();
 				this.performSearch();
 			}
 		}

@@ -42,8 +42,9 @@ export class InlineInput {
 		subscriptions.forEach(subscription => subscription.dispose());
 	};
 
-	public deleteLastCharacter = (): void => {
+	public deleteLastCharacter = (): string => {
 		this.input = this.input.slice(0, -1);
+		return this.input;
 	};
 
 	private readonly _onInput = ({ text }: { text: string }) => {
