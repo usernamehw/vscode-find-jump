@@ -27,7 +27,7 @@ export class FindJump {
 	userInput = '';
 	textEditor!: TextEditor;
 	associationManager = new AssociationManager();
-	activityIndicatorState = 0;
+	activityIndicatorState = false;
 	activatedWithSelection = false;
 	numberOfMatches = 0;
 	decorationOptions: DecorationOptions[] = [];
@@ -204,22 +204,14 @@ export class FindJump {
 
 	updateStatusBarWithActivityIndicator = (): void => {
 		const callback = (): void => {
-			// ┆ ┇ ┣ ┫ ╏ ▎▐ ░ ▒ ▓
-			if (this.activityIndicatorState === 1) {
-				this.inlineInput.updateStatusBar(`${this.numberOfMatches} ┃ ${this.userInput} 🔴 ┃`);
-				this.activityIndicatorState = 0;
-			} else {
-				this.inlineInput.updateStatusBar(`${this.numberOfMatches} ┃ ${this.userInput} ⚪ ┃`);
-				this.activityIndicatorState = 1;
-			}
+			this.inlineInput.updateStatusBar(this.userInput, this.numberOfMatches, this.activityIndicatorState);
+			this.activityIndicatorState = !this.activityIndicatorState;
 		};
 
-		this.inlineInput.updateStatusBar(
-			`${this.numberOfMatches} ┃ ${this.userInput} ${this.activityIndicatorState === 0 ? '🔴' : '⚪'} ┃`
-		);
+		this.inlineInput.updateStatusBar(this.userInput, this.numberOfMatches, this.activityIndicatorState);
 
 		if (this.intervalHandler === undefined) {
-			this.intervalHandler = setInterval(callback, 600);
+			this.intervalHandler = setInterval(callback, 650);
 		}
 	};
 
