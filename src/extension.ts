@@ -1,16 +1,19 @@
 'use strict';
-import vscode, { commands, ExtensionContext, workspace, window, ThemeColor, OverviewRulerLane } from 'vscode';
+import vscode, { commands, ExtensionContext, workspace, window, OverviewRulerLane } from 'vscode';
 import { FindJump } from './findJump';
 import { subscriptions as inlineInputSubscriptions } from './inlineInput';
 import { pickColorType } from './utils';
-
-
 
 export interface IConfig {
 	letterBackground: string;
 	letterBackgroundLight: string;
 	letterForeground: string;
 	letterForegroundLight: string;
+
+	matchBackground: string;
+	matchBackgroundLight: string;
+	matchForeground: string;
+	matchForegroundLight: string;
 
 	overviewRulerMatchForeground: string;
 }
@@ -56,7 +59,8 @@ export function activate(context: ExtensionContext): void {
 		const letterBackground = pickColorType(config.letterBackground);
 
 		letterDecorationType = window.createTextEditorDecorationType({
-			backgroundColor: new ThemeColor('editor.wordHighlightBackground'),
+			backgroundColor: pickColorType(config.matchBackground),
+			color: pickColorType(config.matchForeground),
 			before: {
 				margin: '0 5px 0 5px',
 				backgroundColor: letterBackground,
@@ -65,6 +69,8 @@ export function activate(context: ExtensionContext): void {
 				color: pickColorType(config.letterForeground),
 			},
 			light: {
+				backgroundColor: pickColorType(config.matchBackgroundLight),
+				color: pickColorType(config.matchForegroundLight),
 				before: {
 					backgroundColor: pickColorType(config.letterBackgroundLight),
 					borderColor: pickColorType(config.letterBackgroundLight),

@@ -49,6 +49,26 @@
 					"default": "",
 					"description": "Color of the letter for light themes."
 				},
+				"findJump.matchBackground": {
+					"type": "string",
+					"default": "editor.wordHighlightBackground",
+					"description": ""
+				},
+				"findJump.matchBackgroundLight": {
+					"type": "string",
+					"default": "",
+					"description": ""
+				},
+				"findJump.matchForeground": {
+					"type": "string",
+					"default": "",
+					"description": ""
+				},
+				"findJump.matchForegroundLight": {
+					"type": "string",
+					"default": "",
+					"description": ""
+				},
 				"findJump.overviewRulerMatchForeground": {
 					"type": "string",
 					"default": "#4169E1",
