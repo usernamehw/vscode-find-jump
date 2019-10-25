@@ -1,5 +1,5 @@
 'use strict';
-import vscode, { commands, ExtensionContext, workspace, window, OverviewRulerLane } from 'vscode';
+import vscode, { commands, ExtensionContext, workspace, window } from 'vscode';
 import { FindJump } from './findJump';
 import { subscriptions as inlineInputSubscriptions } from './inlineInput';
 import { pickColorType } from './utils';
@@ -78,7 +78,7 @@ export function activate(context: ExtensionContext): void {
 				},
 			},
 			overviewRulerColor: pickColorType(config.overviewRulerMatchForeground),
-			overviewRulerLane: OverviewRulerLane.Center,
+			overviewRulerLane: 2, // vscode.OverviewRulerLane.Center
 		});
 	}
 	context.subscriptions.push(workspace.onDidChangeConfiguration(updateConfig));
