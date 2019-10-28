@@ -1,11 +1,4 @@
-import {
-	StatusBarItem,
-	StatusBarAlignment,
-	commands,
-	Disposable,
-	window,
-	TextEditor,
-} from 'vscode';
+import { StatusBarItem, StatusBarAlignment, commands, Disposable, window, TextEditor } from 'vscode';
 
 const cancellationChars = new Set('\n');
 export const subscriptions: Disposable[] = [];

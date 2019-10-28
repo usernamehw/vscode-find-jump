@@ -1,5 +1,5 @@
-'use strict';
 import vscode, { commands, ExtensionContext, workspace, window } from 'vscode';
+
 import { FindJump } from './findJump';
 import { subscriptions as inlineInputSubscriptions } from './inlineInput';
 import { pickColorType } from './utils';

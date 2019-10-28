@@ -1,8 +1,4 @@
-import {
-	Range,
-	TextEditor,
-	DecorationOptions,
-} from 'vscode';
+import { Range, DecorationOptions } from 'vscode';
 
 export class AssociationManager {
 	public associations: Map<string, Range> = new Map();

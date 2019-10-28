@@ -1,6 +1,4 @@
-import {
-	TextDocument,
-} from 'vscode';
+import { TextDocument } from 'vscode';
 
 const enum NextLineToRead {
 	Current,

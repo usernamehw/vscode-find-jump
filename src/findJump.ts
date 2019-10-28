@@ -1,12 +1,5 @@
-import {
-	Selection,
-	TextEditor,
-	TextLine,
-	Range,
-	commands,
-	window,
-	DecorationOptions,
-} from 'vscode';
+import { Selection, TextEditor, TextLine, Range, commands, window, DecorationOptions } from 'vscode';
+
 import { InlineInput } from './inlineInput';
 import { documentRippleScanner } from './documentRippleScanner';
 import { AssociationManager } from './associationManager';
