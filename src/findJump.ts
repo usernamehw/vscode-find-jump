@@ -91,7 +91,7 @@ export class FindJump {
 			const { index, value } = match;
 			const range = new Range(index, value.start, index, value.end);
 
-			this.decorationOptions.push(this.associationManager.createAssociation(availableJumpChar, range, this.textEditor));
+			this.decorationOptions.push(this.associationManager.createAssociation(availableJumpChar, range));
 		}
 
 		this.textEditor.setDecorations(letterDecorationType, this.decorationOptions);

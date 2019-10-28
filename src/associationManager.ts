@@ -8,7 +8,7 @@ export class AssociationManager {
 	public associations: Map<string, Range> = new Map();
 	public jumpChars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-	public createAssociation = (letter: string, range: Range, textEditor: TextEditor): DecorationOptions => {
+	public createAssociation = (letter: string, range: Range): DecorationOptions => {
 		const finalLetter = letter === letter.toUpperCase() ? `⇧${letter.toLowerCase()}` : letter;
 		const decorationOptions: DecorationOptions = {
 			range,
