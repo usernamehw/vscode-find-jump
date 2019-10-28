@@ -8,8 +8,8 @@ export class AssociationManager {
 	public associations: Map<string, Range> = new Map();
 	public jumpChars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-	public createAssociation = (letter: string, range: Range): DecorationOptions => {
-		const finalLetter = letter === letter.toUpperCase() ? `⇧${letter.toLowerCase()}` : letter;
+	public createAssociation = (char: string, range: Range): DecorationOptions => {
+		const finalLetter = /[a-zA-Z]/.test(char) && char === char.toUpperCase() ? `⇧${char.toLowerCase()}` : char;
 		const decorationOptions: DecorationOptions = {
 			range,
 			renderOptions: {
@@ -19,7 +19,7 @@ export class AssociationManager {
 			},
 		};
 
-		this.associations.set(letter, range);
+		this.associations.set(char, range);
 		return decorationOptions;
 	};
 
