@@ -9,14 +9,16 @@ export interface IConfig {
 	excludeNextChars: number;
 
 	letterBackground: string;
-	letterBackgroundLight: string;
 	letterForeground: string;
-	letterForegroundLight: string;
-
 	matchBackground: string;
-	matchBackgroundLight: string;
 	matchForeground: string;
-	matchForegroundLight: string;
+
+	light: {
+		letterBackground: string;
+		letterForeground: string;
+		matchBackground: string;
+		matchForeground: string;
+	};
 
 	overviewRulerMatchForeground: string;
 }
@@ -61,6 +63,7 @@ export function activate(context: ExtensionContext): void {
 		}
 
 		const letterBackground = pickColorType(config.letterBackground);
+		const letterBackgroundLight = pickColorType(config.light.letterBackground);
 
 		letterDecorationType = window.createTextEditorDecorationType({
 			backgroundColor: pickColorType(config.matchBackground),
@@ -73,12 +76,12 @@ export function activate(context: ExtensionContext): void {
 				color: pickColorType(config.letterForeground),
 			},
 			light: {
-				backgroundColor: pickColorType(config.matchBackgroundLight),
-				color: pickColorType(config.matchForegroundLight),
+				backgroundColor: pickColorType(config.light.matchBackground),
+				color: pickColorType(config.light.matchForeground),
 				before: {
-					backgroundColor: pickColorType(config.letterBackgroundLight),
-					borderColor: pickColorType(config.letterBackgroundLight),
-					color: pickColorType(config.letterForegroundLight),
+					backgroundColor: letterBackgroundLight,
+					borderColor: letterBackgroundLight,
+					color: pickColorType(config.light.letterForeground),
 				},
 			},
 			overviewRulerColor: pickColorType(config.overviewRulerMatchForeground),

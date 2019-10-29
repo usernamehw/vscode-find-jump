@@ -19,13 +19,10 @@ A few things to note:
 > Color settings support referencing [Theme Color Id](https://code.visualstudio.com/api/references/theme-color).
 
 - `findJump.letterBackground`: Background color of the extension's main decoration: letter to jump.
-- `findJump.letterBackgroundLight`: Background color of the letter for light themes.
 - `findJump.letterForeground`: Color of the extension's main decoration: letter to jump.
-- `findJump.letterForegroundLight`: Color of the letter for light themes.
 - `findJump.matchBackground`:
-- `findJump.matchBackgroundLight`:
 - `findJump.matchForeground`:
-- `findJump.matchForegroundLight`:
+- `findJump.light`:Overwrite colors for light themes.
 - `findJump.overviewRulerMatchForeground`: Color of the matches in the scrollbar area.
 - `findJump.jumpChars`: Use custom alphabet for jump chars.
 - `findJump.excludeNextChars`: Number of next excluded characters.
