@@ -27,6 +27,7 @@ A few things to note:
 - `findJump.matchForeground`:
 - `findJump.matchForegroundLight`:
 - `findJump.overviewRulerMatchForeground`: Color of the matches in the scrollbar area.
+- `findJump.jumpChars`: Use custom alphabet for jump chars.
 
 ## Commands
 
@@ -35,14 +36,7 @@ A few things to note:
 
 # TODO (in the future):
 
-- [x] Remove delay (100ms debounce seems excessive and should be nuked)
-- [x] Configure colors
-- [ ] Option to limit the search in visible area (instead of scanning the entire document)
-- [ ] Option to search in all visible editors (split/grid)
-- [ ] Command to go to the next/previous match
-- [x] Show number of matches in the status bar
-- [x] Show matches in the scrollbar
-- [ ] Option to render decoraitons on top of the text instead of prepending (that moves the entire text)
-- [x] Cancel the mode on <kbd>Esc</kbd> press
-- [x] Remove last typed character on <kbd>Backspace</kbd>
-- [ ] Go to first match on <kbd>Enter</kbd>
+- [ ] 🐎 Option to limit the search in visible area (instead of scanning the entire document)
+- [ ] ✨ Option to search in all visible editors (split/grid)
+- [ ] ✨ Command to go to the next/previous match
+- [ ] 🐎 Option to render decoraitons on top of the text instead of prepending (that moves the entire text)
