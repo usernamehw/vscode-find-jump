@@ -5,6 +5,8 @@ import { subscriptions as inlineInputSubscriptions } from './inlineInput';
 import { pickColorType } from './utils';
 
 export interface IConfig {
+	jumpChars: string;
+
 	letterBackground: string;
 	letterBackgroundLight: string;
 	letterForeground: string;
@@ -50,6 +52,7 @@ export function activate(context: ExtensionContext): void {
 
 		config = workspace.getConfiguration(EXTENSION_NAME) as any as IConfig;
 		updateLetterDecorationType();
+		findJump.reset();
 	}
 	function updateLetterDecorationType() {
 		if (letterDecorationType) {

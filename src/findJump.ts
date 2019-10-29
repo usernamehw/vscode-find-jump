@@ -3,7 +3,7 @@ import { Selection, TextEditor, TextLine, Range, commands, window, DecorationOpt
 import { InlineInput } from './inlineInput';
 import { documentRippleScanner } from './documentRippleScanner';
 import { AssociationManager } from './associationManager';
-import { letterDecorationType } from './extension';
+import { letterDecorationType, config } from './extension';
 
 // types
 interface IMatch {
@@ -112,7 +112,7 @@ export class FindJump {
 	getMatchesAndAvailableJumpChars = () => {
 		const { document, selection } = this.textEditor;
 		const documentIterator = documentRippleScanner(document, selection.end.line);
-		const availableJumpChars = [...this.associationManager.jumpChars];
+		const availableJumpChars = [...config.jumpChars];
 		const matches: { value: IMatch; index: number }[] = [];
 
 		outer: for (const { line, index } of documentIterator) {
