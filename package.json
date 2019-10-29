@@ -34,6 +34,11 @@
 					"default": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
 					"description": "Use custom alphabet for jump chars."
 				},
+				"findJump.excludeNextChars": {
+					"type": "number",
+					"default": 3,
+					"description": "Number of next excluded characters."
+				},
 				"findJump.letterBackground": {
 					"type": "string",
 					"default": "#4169E1",

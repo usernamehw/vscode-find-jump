@@ -6,6 +6,7 @@ import { pickColorType } from './utils';
 
 export interface IConfig {
 	jumpChars: string;
+	excludeNextChars: number;
 
 	letterBackground: string;
 	letterBackgroundLight: string;

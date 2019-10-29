@@ -154,7 +154,7 @@ export class FindJump {
 		) {
 			const start = index;
 			const end = index + needle.length;
-			const excludedChars = haystack.slice(end, end + 8).replace(/[^a-z]/gi, '').split('');
+			const excludedChars = haystack.slice(end, end + config.excludeNextChars).replace(/[^a-z]/gi, '').split('');
 			indexes.push({ start, end, excludedChars });
 			iterationNumber++;
 		}
