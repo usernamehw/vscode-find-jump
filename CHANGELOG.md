@@ -1,10 +1,15 @@
+## 0.3.0 `29 Oct 2019`
+
+- ✨ Use custom alphabet for jump chars
+- ✨ Configure number of next excluded characters
+
 ## 0.2.0 `25 Oct 2019`
 
 - ✨ Show matches in Overview Ruler (scrollbar)
 - ✨ Show number of matches in the status bar
 - ✨ Support passing theme color id
 - ✨ Configure color of matches in editor
-- 🐎 Perf: reuse decoration type. Change only decoration options (text).
+- 🐎 Perf: reuse decoration type. Change only decoration options (text)
 
 ## 0.1.4 `24 Oct 2019`
 
