@@ -90,6 +90,17 @@
 							"description": ""
 						}
 					}
+				},
+				"findJump.jumpCursorPosition": {
+					"type": "string",
+					"default": "start",
+					"enum": [
+						"start",
+						"end"
+					],
+					"enumDescriptions": [
+						"Place where to jump cursor: before searching range or after"
+					]
 				}
 			}
 		},
