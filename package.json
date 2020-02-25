@@ -99,7 +99,8 @@
 						"end"
 					],
 					"enumDescriptions": [
-						"Place where to jump cursor: before searching range or after"
+						"Jump to the start of the range.",
+						"Jump to the end of the range."
 					]
 				}
 			}
