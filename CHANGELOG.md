@@ -1,3 +1,7 @@
+## 0.4.0 `25 Feb 2020`
+
+- ✨ Add the ability to jump the cursor at the end of the range [PR#12](https://github.com/usernamehw/vscode-find-jump/pull/12) by [@amikitevich](https://github.com/amikitevich)
+
 ## 0.3.0 `29 Oct 2019`
 
 - ✨ Use custom alphabet for jump chars
