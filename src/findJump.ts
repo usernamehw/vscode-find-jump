@@ -97,7 +97,8 @@ export class FindJump {
 			return;
 		}
 
-		const { line, character } = range.start;
+		const cursorPosition = config.jumpCursorPosition;
+		const { line, character } = range[cursorPosition];
 
 		this.textEditor.selection = new Selection(
 			this.activatedWithSelection ? this.textEditor.selection.start.line : line,

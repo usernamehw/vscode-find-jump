@@ -26,6 +26,7 @@ A few things to note:
 - `findJump.overviewRulerMatchForeground`: Color of the matches in the scrollbar area.
 - `findJump.jumpChars`: Use custom alphabet for jump chars.
 - `findJump.excludeNextChars`: Number of next excluded characters.
+- `findJump.jumpCursorPosition`: Place where to jump cursor: before searching range or after.
 
 ## Commands
 

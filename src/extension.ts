@@ -21,6 +21,7 @@ export interface IConfig {
 	};
 
 	overviewRulerMatchForeground: string;
+	jumpCursorPosition: 'start' | 'end';
 }
 export let config: IConfig;
 export let letterDecorationType: vscode.TextEditorDecorationType;
