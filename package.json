@@ -39,6 +39,11 @@
 					"default": 3,
 					"description": "Number of next excluded characters."
 				},
+				"findJump.onlyVisibleRanges": {
+					"type": "boolean",
+					"default": true,
+					"description": "When checked - will search only in visible text in editor."
+				},
 				"findJump.letterBackground": {
 					"type": "string",
 					"default": "#4169E1",

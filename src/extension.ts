@@ -3,26 +3,8 @@ import vscode, { commands, ExtensionContext, workspace, window } from 'vscode';
 import { FindJump } from './findJump';
 import { subscriptions as inlineInputSubscriptions } from './inlineInput';
 import { pickColorType } from './utils';
+import { IConfig } from './types';
 
-export interface IConfig {
-	jumpChars: string;
-	excludeNextChars: number;
-
-	letterBackground: string;
-	letterForeground: string;
-	matchBackground: string;
-	matchForeground: string;
-
-	light: {
-		letterBackground: string;
-		letterForeground: string;
-		matchBackground: string;
-		matchForeground: string;
-	};
-
-	overviewRulerMatchForeground: string;
-	jumpCursorPosition: 'start' | 'end';
-}
 export let config: IConfig;
 export let letterDecorationType: vscode.TextEditorDecorationType;
 

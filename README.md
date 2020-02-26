@@ -22,11 +22,12 @@ A few things to note:
 - `findJump.letterForeground`: Color of the extension's main decoration: letter to jump.
 - `findJump.matchBackground`:
 - `findJump.matchForeground`:
-- `findJump.light`:Overwrite colors for light themes.
 - `findJump.overviewRulerMatchForeground`: Color of the matches in the scrollbar area.
+- `findJump.light`:Overwrite colors for light themes.
 - `findJump.jumpChars`: Use custom alphabet for jump chars.
-- `findJump.excludeNextChars`: Number of next excluded characters.
+- `findJump.excludeNextChars`: Number of next excluded characters. TODO: write better description.
 - `findJump.jumpCursorPosition`: Place where to jump cursor: before searching range or after.
+- `findJump.onlyVisibleRanges`: When checked - will search only in visible text in editor.
 
 ## Commands
 
@@ -35,7 +36,6 @@ A few things to note:
 
 # TODO (in the future):
 
-- [ ] 🐎 Option to limit the search in visible area (instead of scanning the entire document)
 - [ ] ✨ Option to search in all visible editors (split/grid)
 - [ ] ✨ Command to go to the next/previous match
 - [ ] 🐎 Option to render decoraitons on top of the text instead of prepending (that moves the entire text)

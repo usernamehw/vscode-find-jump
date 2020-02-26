@@ -112,7 +112,14 @@ export class FindJump {
 
 	getMatchesAndAvailableJumpChars = () => {
 		const { document, selection } = this.textEditor;
-		const documentIterator = documentRippleScanner(document, selection.end.line);
+		let firstLineIndex = 0;
+		let lastLineIndex = document.lineCount - 1;
+
+		if (config.onlyVisibleRanges) {
+			firstLineIndex = this.textEditor.visibleRanges[0].start.line - 1;
+			lastLineIndex = this.textEditor.visibleRanges[0].end.line + 1;
+		}
+		const documentIterator = documentRippleScanner(document, selection.end.line, firstLineIndex, lastLineIndex);
 		const availableJumpChars = [...config.jumpChars];
 		const matches: { value: IMatch; index: number }[] = [];
 

@@ -1,3 +1,7 @@
+## 0.4.1 `26 Feb 2020`
+
+- ✨🐎 Add option to limit search to visible area (instead of scanning the entire document) – `findJump.onlyVisibleRanges`
+
 ## 0.4.0 `25 Feb 2020`
 
 - ✨ Add the ability to jump the cursor at the end of the range [PR#12](https://github.com/usernamehw/vscode-find-jump/pull/12) by [@amikitevich](https://github.com/amikitevich)

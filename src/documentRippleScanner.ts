@@ -14,12 +14,11 @@ const enum NextLineToRead {
  */
 export function* documentRippleScanner(
 	document: Readonly<TextDocument>,
-	startingLine: number
+	startingLine: number,
+	indexOfFirstLine: number,
+	indexOfLastLine: number
 ) {
 	let nextLineToRead: NextLineToRead = NextLineToRead.Current;
-
-	const indexOfFirstLine = 0;
-	const indexOfLastLine = document.lineCount - 1;
 
 	let upLinePointer = startingLine - 1;
 	let downLinePointer = startingLine + 1;
