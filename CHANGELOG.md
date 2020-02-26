@@ -1,3 +1,7 @@
+## 0.4.2 `26 Feb 2020`
+
+- 🐛 Fix exception when at the top of the document
+
 ## 0.4.1 `26 Feb 2020`
 
 - ✨🐎 Add option to limit search to visible area (instead of scanning the entire document) – `findJump.onlyVisibleRanges`
