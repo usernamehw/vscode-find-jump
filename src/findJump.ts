@@ -118,7 +118,7 @@ export class FindJump {
 		if (config.onlyVisibleRanges) {
 			const visibleRanges = this.textEditor.visibleRanges[0];
 			firstLineIndex = visibleRanges.start.line !== 0 ? visibleRanges.start.line - 1 : 0;
-			lastLineIndex = visibleRanges.end.line + 1;
+			lastLineIndex = visibleRanges.end.line !== document.lineCount - 1 ? visibleRanges.end.line + 1 : document.lineCount - 2;
 		}
 		const documentIterator = documentRippleScanner(document, selection.end.line, firstLineIndex, lastLineIndex);
 		const availableJumpChars = [...config.jumpChars];

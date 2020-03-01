@@ -1,3 +1,7 @@
+## 0.4.3 `01 Mar 2020`
+
+- 🐛 Fix exception when at the end of the document 🤦‍♂️
+
 ## 0.4.2 `26 Feb 2020`
 
 - 🐛 Fix exception when at the top of the document
