@@ -44,6 +44,11 @@
 					"default": true,
 					"description": "When checked - will search only in visible text in editor."
 				},
+				"findJump.dimWhenActive": {
+					"type": "boolean",
+					"default": false,
+					"description": "When enabled - will show code as grayscale to see matches more easily."
+				},
 				"findJump.letterBackground": {
 					"type": "string",
 					"default": "#4169E1",

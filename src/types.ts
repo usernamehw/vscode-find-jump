@@ -3,6 +3,7 @@ export interface IConfig {
 	excludeNextChars: number;
 	onlyVisibleRanges: boolean;
 
+	dimWhenActive: boolean;
 	letterBackground: string;
 	letterForeground: string;
 	matchBackground: string;
