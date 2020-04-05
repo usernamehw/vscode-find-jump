@@ -28,6 +28,7 @@ A few things to note:
 - `findJump.excludeNextChars`: Number of next excluded characters. TODO: write better description.
 - `findJump.jumpCursorPosition`: Place where to jump cursor: before searching range or after.
 - `findJump.onlyVisibleRanges`: When checked - will search only in visible text in editor.
+- `findJump.dimWhenActive`: When checked - will show code as grayscale to see matches more easily. (copied from [another fork](https://marketplace.visualstudio.com/items?itemName=si3792.xray-jump))
 
 ## Commands
 

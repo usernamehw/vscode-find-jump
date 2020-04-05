@@ -24,6 +24,9 @@ export class FindJump {
 	activatedWithSelection = false;
 	numberOfMatches = 0;
 	decorationOptions: DecorationOptions[] = [];
+	dim: any;
+	bright: any;
+	allRanges: Range[] = [];
 
 	activate = (textEditor: TextEditor): void => {
 		this.textEditor = textEditor;
@@ -45,6 +48,7 @@ export class FindJump {
 		});
 
 		this.updateStatusBarWithActivityIndicator();
+		this.startDim();
 	};
 
 	activateWithSelection = (textEditor: TextEditor): void => {
@@ -70,6 +74,10 @@ export class FindJump {
 
 		if (matches.length > 0) {
 			this.associationManager.dispose();
+
+			// Dont gray out matches from previous iteration
+			this.clearBright();
+			this.allRanges = [];
 		}
 
 		this.numberOfMatches = matches.length;
@@ -83,14 +91,23 @@ export class FindJump {
 			const availableJumpChar = availableJumpChars[i];
 			const { index, value } = match;
 			const range = new Range(index, value.start, index, value.end);
+			this.allRanges.push(new Range(index, value.start - 1, index, Math.max(value.start + 1, value.end)));
 
 			this.decorationOptions.push(this.associationManager.createAssociation(availableJumpChar, range));
 		}
 
 		this.textEditor.setDecorations(letterDecorationType, this.decorationOptions);
+	
+		if (this.dim && matches.length > 0) {
+			this.bright = this.bright || window.createTextEditorDecorationType({
+				textDecoration: `none; filter: none !important;`,
+			});
+			this.textEditor.setDecorations(this.bright, this.allRanges);
+		}
 	};
 
 	jump = (jumpChar: string): void => {
+		this.clearDim();
 		const range = this.associationManager.associations.get(jumpChar);
 
 		if (!range) {
@@ -172,6 +189,7 @@ export class FindJump {
 	};
 
 	reset = (): void => {
+		this.clearDim();
 		this.isActive = false;
 		this.activatedWithSelection = false;
 		this.userInput = '';
@@ -219,5 +237,30 @@ export class FindJump {
 	clearActivityIndicator = (): void => {
 		clearInterval(this.intervalHandler);
 		this.intervalHandler = undefined;
+	};
+
+	startDim = () => {
+		if (!config.dimWhenActive) return;
+		this.dim = window.createTextEditorDecorationType({
+			textDecoration: `none; filter: grayscale(1);`,
+		});
+		this.textEditor.setDecorations(this.dim, [new Range(0, 0, this.textEditor.document.lineCount, Number.MAX_VALUE)]);
+	};
+
+	clearDim = () => {
+		if (this.dim) {
+			this.textEditor.setDecorations(this.dim, []);
+			this.dim.dispose();
+			delete this.dim;
+		}
+		this.clearBright();
+	};
+
+	clearBright = () => {
+		if (this.bright) {
+			this.textEditor.setDecorations(this.bright, []);
+			this.bright.dispose();
+			delete this.bright;
+		}
 	};
 }
