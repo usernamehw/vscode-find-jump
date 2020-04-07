@@ -186,6 +186,7 @@ export class FindJump {
 		this.clearDim();
 		this.isActive = false;
 		this.activatedWithSelection = false;
+		this.numberOfMatches = 0;
 		this.userInput = '';
 		this.textEditor.setDecorations(letterDecorationType, []);
 		this.clearActivityIndicator();
