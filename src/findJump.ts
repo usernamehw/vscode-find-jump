@@ -1,17 +1,10 @@
-import { Selection, TextEditor, TextLine, Range, commands, window, DecorationOptions } from 'vscode';
+import { Selection, TextEditor, TextLine, Range, commands, window, DecorationOptions, TextEditorDecorationType } from 'vscode';
 
 import { InlineInput } from './inlineInput';
 import { documentRippleScanner } from './documentRippleScanner';
 import { AssociationManager } from './associationManager';
 import { letterDecorationType, config } from './extension';
-
-// types
-interface IMatch {
-	start: number;
-	end: number;
-	excludedChars: string[];
-}
-type MatchesArr = IMatch[];
+import { IMatch } from './types';
 
 export class FindJump {
 	isActive = false;
@@ -24,8 +17,8 @@ export class FindJump {
 	activatedWithSelection = false;
 	numberOfMatches = 0;
 	decorationOptions: DecorationOptions[] = [];
-	dim: any;
-	bright: any;
+	dim!: TextEditorDecorationType;
+	bright!: TextEditorDecorationType;
 	allRanges: Range[] = [];
 
 	activate = (textEditor: TextEditor): void => {
@@ -97,7 +90,7 @@ export class FindJump {
 		}
 
 		this.textEditor.setDecorations(letterDecorationType, this.decorationOptions);
-	
+
 		if (this.dim && matches.length > 0) {
 			this.bright = this.bright || window.createTextEditorDecorationType({
 				textDecoration: `none; filter: none !important;`,
@@ -167,7 +160,7 @@ export class FindJump {
 		return { matches, availableJumpChars };
 	};
 
-	getLineMatches = (line: TextLine): MatchesArr => {
+	getLineMatches = (line: TextLine): IMatch[] => {
 		const indexes = [];
 		const { text } = line;
 		const haystack = text.toLowerCase();
@@ -201,7 +194,11 @@ export class FindJump {
 		commands.executeCommand('setContext', 'findJumpActive', false);
 	};
 	/**
-	 * TODO: write description
+	 * What happens when backspace key is pressed
+	 *
+	 * Delete last typed character
+	 *
+	 * If nothing to delete - exit jump mode
 	 */
 	backspace = (): void => {
 		switch (this.userInput.length) {

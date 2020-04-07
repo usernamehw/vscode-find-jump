@@ -11,7 +11,7 @@ export let letterDecorationType: vscode.TextEditorDecorationType;
 export function activate(context: ExtensionContext): void {
 	const EXTENSION_NAME = 'findJump';
 	config = workspace.getConfiguration(EXTENSION_NAME) as any as IConfig;
-	updateLetterDecorationType();
+	updateDecorationTypes();
 	const findJump = new FindJump();
 
 	context.subscriptions.push(
@@ -37,10 +37,10 @@ export function activate(context: ExtensionContext): void {
 		if (!e.affectsConfiguration(EXTENSION_NAME)) return;
 
 		config = workspace.getConfiguration(EXTENSION_NAME) as any as IConfig;
-		updateLetterDecorationType();
+		updateDecorationTypes();
 		findJump.reset();
 	}
-	function updateLetterDecorationType() {
+	function updateDecorationTypes() {
 		if (letterDecorationType) {
 			letterDecorationType.dispose();
 		}
