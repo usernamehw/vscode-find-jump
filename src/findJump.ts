@@ -183,7 +183,6 @@ export class FindJump {
 	};
 
 	reset = (): void => {
-		this.clearDim();
 		this.isActive = false;
 		this.activatedWithSelection = false;
 		this.numberOfMatches = 0;
@@ -192,6 +191,7 @@ export class FindJump {
 		this.clearActivityIndicator();
 		this.inlineInput.destroy();
 		this.associationManager.dispose();
+		this.clearDim();
 
 		commands.executeCommand('setContext', 'findJumpActive', false);
 	};
