@@ -84,7 +84,8 @@ export class FindJump {
 			const availableJumpChar = availableJumpChars[i];
 			const { index, value } = match;
 			const range = new Range(index, value.start, index, value.end);
-			this.allRanges.push(new Range(index, value.start - 1, index, Math.max(value.start + 1, value.end)));
+
+			this.allRanges.push(new Range(index, value.start === 0 ? 0 : value.start - 1, index, Math.max(value.start + 1, value.end)));
 
 			this.decorationOptions.push(this.associationManager.createAssociation(availableJumpChar, range));
 		}
