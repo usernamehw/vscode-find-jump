@@ -7,7 +7,7 @@ Find-Jump works when you type a sequence of characters so that it can narrow dow
 
 ## How to use Find-Jump
 
-When you activate Find-Jump (<kbd>`Ctrl`</kbd>+<kbd>`;`</kbd>), you'll see a blinking red light in the status bar indicating that Find-Jump is active and is receiving your input (see gif above). Now you can start typing the characters to where you want to jump. Usually 3 to 5 characters should be enough to narrow down the location, but your own workflow may vary.
+When you activate Find-Jump (<kbd>Ctrl</kbd>+<kbd>;</kbd>), you'll see a blinking red light in the status bar indicating that Find-Jump is active and is receiving your input (see gif above). Now you can start typing the characters to where you want to jump. Usually 3 to 5 characters should be enough to narrow down the location, but your own workflow may vary.
 
 A few things to note:
 
