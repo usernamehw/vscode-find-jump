@@ -181,15 +181,15 @@
 		"watch": "webpack --mode development --watch --display=minimal"
 	},
 	"devDependencies": {
-		"@types/node": "^10.14.22",
+		"@types/node": "^10.17.18",
 		"@types/vscode": "^1.35.0",
-		"@typescript-eslint/eslint-plugin": "^2.21.0",
-		"@typescript-eslint/parser": "^2.21.0",
+		"@typescript-eslint/eslint-plugin": "^2.27.0",
+		"@typescript-eslint/parser": "^2.27.0",
 		"eslint": "^6.8.0",
 		"friendly-errors-webpack-plugin": "^1.7.0",
-		"ts-loader": "^6.2.1",
-		"typescript": "^3.8.2",
-		"webpack": "^4.41.6",
+		"ts-loader": "^6.2.2",
+		"typescript": "^3.8.3",
+		"webpack": "^4.42.1",
 		"webpack-cli": "^3.3.11"
 	}
 }
