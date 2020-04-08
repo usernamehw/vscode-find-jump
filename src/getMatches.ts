@@ -16,7 +16,7 @@ export function getMatchesAndAvailableJumpChars(editor: TextEditor, needle: stri
 	if (config.onlyVisibleRanges) {
 		const range = visibleRanges[0];
 		firstLineIndex = range.start.line !== 0 ? range.start.line - 1 : 0;
-		lastLineIndex = range.end.line !== document.lineCount - 1 ? range.end.line + 1 : document.lineCount - 2;
+		lastLineIndex = range.end.line !== document.lineCount - 1 ? range.end.line + 1 : document.lineCount - 1;
 
 		// if (visibleRanges.length > 1) {
 		// 	let lastEndLine = visibleRanges[0].end.line;
