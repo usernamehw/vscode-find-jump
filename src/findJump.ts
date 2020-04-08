@@ -25,7 +25,7 @@ export class FindJump {
 		this.textEditor = textEditor;
 
 		if (this.isActive) {
-			this.reset();
+			this.cancel();
 		}
 
 		window.showTextDocument(textEditor.document);
@@ -37,7 +37,7 @@ export class FindJump {
 		this.inlineInput = new InlineInput({
 			textEditor,
 			onInput: this.onInput,
-			onCancel: this.reset,
+			onCancel: this.cancel,
 		});
 
 		this.updateStatusBarWithActivityIndicator();
@@ -118,7 +118,7 @@ export class FindJump {
 			character
 		);
 
-		this.reset();
+		this.cancel();
 	};
 
 	getMatchesAndAvailableJumpChars = () => {
@@ -181,8 +181,10 @@ export class FindJump {
 
 		return indexes;
 	};
-
-	reset = (): void => {
+	/**
+	 * Cancel find jump mode
+	 */
+	cancel = (): void => {
 		this.isActive = false;
 		this.activatedWithSelection = false;
 		this.numberOfMatches = 0;
@@ -205,7 +207,7 @@ export class FindJump {
 	backspace = (): void => {
 		switch (this.userInput.length) {
 			case 0: {
-				this.reset();
+				this.cancel();
 				break;
 			}
 			case 1: {

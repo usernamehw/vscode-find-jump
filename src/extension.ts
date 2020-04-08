@@ -25,7 +25,7 @@ export function activate(context: ExtensionContext): void {
 		),
 		commands.registerTextEditorCommand(
 			`${EXTENSION_NAME}.cancel`,
-			findJump.reset
+			findJump.cancel
 		),
 		commands.registerTextEditorCommand(
 			`${EXTENSION_NAME}.backspace`,
@@ -38,7 +38,7 @@ export function activate(context: ExtensionContext): void {
 
 		config = workspace.getConfiguration(EXTENSION_NAME) as any as IConfig;
 		updateDecorationTypes();
-		findJump.reset();
+		findJump.cancel();
 	}
 	function updateDecorationTypes() {
 		if (letterDecorationType) {
