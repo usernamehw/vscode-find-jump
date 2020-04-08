@@ -1,3 +1,9 @@
+## 0.5.0 `08 Apr 2020`
+
+- 🐛 Decorations should not render in folded lines
+- ✨ Add grayscale option `dimWhenActive` [PR#18](https://github.com/usernamehw/vscode-find-jump/pull/18) by [@TeNNoX](https://github.com/TeNNoX)
+- 💥 Change default alphabet (custom/jump chars) to prioritize qwerty home row
+
 ## 0.4.3 `01 Mar 2020`
 
 - 🐛 Fix exception when at the end of the document 🤦‍♂️
