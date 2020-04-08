@@ -49,6 +49,11 @@
 					"default": false,
 					"description": "When enabled - will show code as grayscale to see matches more easily."
 				},
+				"findJump.activateToToggle": {
+					"type": "boolean",
+					"default": true,
+					"description": "When enabled - will toggle active state for default `findJump.activate*` commands."
+				},
 				"findJump.letterBackground": {
 					"type": "string",
 					"default": "#4169E1",

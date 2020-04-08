@@ -25,8 +25,10 @@ export class FindJump {
 
 		if (this.isActive) {
 			this.cancel();
+			if (config.activateToToggle) {
+				return;
+			}
 		}
-
 		window.showTextDocument(textEditor.document);
 
 		this.isActive = true;

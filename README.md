@@ -33,6 +33,7 @@ A few things to note:
 | findJump.jumpCursorPosition | start | Place where to jump cursor: before searching range or after. |
 | findJump.onlyVisibleRanges | **true** | When enabled - will search only in visible text in editor. |
 | findJump.dimWhenActive | **false** | When enabled - will show code as grayscale to see matches more easily. (copied from [another fork](https://marketplace.visualstudio.com/items?itemName=si3792.xray-jump)) |
+| findJump.activateToToggle | **true** | When enabled - will toggle active state for default `findJump.activate*` commands. |
 
 </details>
 

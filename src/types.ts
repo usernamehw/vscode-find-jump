@@ -3,6 +3,7 @@ export interface IConfig {
 	excludeNextChars: number;
 	onlyVisibleRanges: boolean;
 	dimWhenActive: boolean;
+	activateToToggle: boolean;
 	jumpCursorPosition: 'start' | 'end';
 
 	letterBackground: string;
