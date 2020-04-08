@@ -70,7 +70,6 @@ export function getMatchesAndAvailableJumpChars(editor: TextEditor, needle: stri
 
 		// @ts-ignore
 		const lineMatches = getLineMatches(line, needle);
-		console.log(lineMatches);
 		for (const lineMatch of lineMatches) {
 			if (matches.length >= availableJumpChars.length) {
 				break outer;
