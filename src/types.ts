@@ -25,3 +25,9 @@ export interface IMatch {
 	end: number;
 	excludedChars: string[];
 }
+
+export const enum NextLineToRead {
+	Current,
+	Higher,
+	Lower,
+}

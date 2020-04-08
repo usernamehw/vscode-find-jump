@@ -1,10 +1,9 @@
 import { Selection, TextEditor, TextLine, Range, commands, window, DecorationOptions, TextEditorDecorationType } from 'vscode';
 
 import { InlineInput } from './inlineInput';
-import { documentRippleScanner } from './documentRippleScanner';
 import { AssociationManager } from './associationManager';
 import { letterDecorationType, config } from './extension';
-import { IMatch } from './types';
+import { getMatchesAndAvailableJumpChars } from './getMatches';
 
 export class FindJump {
 	isActive = false;
@@ -63,7 +62,7 @@ export class FindJump {
 
 	performSearch = (): void => {
 		this.decorationOptions = [];
-		const { matches, availableJumpChars } = this.getMatchesAndAvailableJumpChars();
+		const { matches, availableJumpChars } = getMatchesAndAvailableJumpChars(this.textEditor, this.userInput.toLowerCase());
 
 		if (matches.length > 0) {
 			this.associationManager.dispose();
@@ -121,66 +120,6 @@ export class FindJump {
 		this.cancel();
 	};
 
-	getMatchesAndAvailableJumpChars = () => {
-		const { document, selection } = this.textEditor;
-		let firstLineIndex = 0;
-		let lastLineIndex = document.lineCount - 1;
-
-		if (config.onlyVisibleRanges) {
-			const visibleRanges = this.textEditor.visibleRanges[0];
-			firstLineIndex = visibleRanges.start.line !== 0 ? visibleRanges.start.line - 1 : 0;
-			lastLineIndex = visibleRanges.end.line !== document.lineCount - 1 ? visibleRanges.end.line + 1 : document.lineCount - 2;
-		}
-		const documentIterator = documentRippleScanner(document, selection.end.line, firstLineIndex, lastLineIndex);
-		const availableJumpChars = [...config.jumpChars];
-		const matches: { value: IMatch; index: number }[] = [];
-
-		outer: for (const { line, index } of documentIterator) {
-			const lineMatches = this.getLineMatches(line);
-
-			for (const lineMatch of lineMatches) {
-				if (matches.length >= availableJumpChars.length) {
-					break outer;
-				}
-
-				matches.push({ value: lineMatch, index });
-
-				for (const excludedChar of lineMatch.excludedChars) {
-					for (let i = 0; i < 2; i++) {
-						const method = i === 0 ? 'toLowerCase' : 'toUpperCase';
-						const indexOfExcludedChar = availableJumpChars.indexOf(excludedChar[method]());
-
-						if (indexOfExcludedChar !== -1) {
-							availableJumpChars.splice(indexOfExcludedChar, 1);
-						}
-					}
-				}
-			}
-		}
-
-		return { matches, availableJumpChars };
-	};
-
-	getLineMatches = (line: TextLine): IMatch[] => {
-		const indexes = [];
-		const { text } = line;
-		const haystack = text.toLowerCase();
-		const needle = this.userInput.toLowerCase();
-
-		let index = 0;
-		let iterationNumber = 0;
-		while (
-			(index = haystack.indexOf(needle, iterationNumber === 0 ? 0 : index + needle.length)) !== -1
-		) {
-			const start = index;
-			const end = index + needle.length;
-			const excludedChars = haystack.slice(end, end + config.excludeNextChars).replace(/[^a-z]/gi, '').split('');
-			indexes.push({ start, end, excludedChars });
-			iterationNumber++;
-		}
-
-		return indexes;
-	};
 	/**
 	 * Cancel find jump mode
 	 */
