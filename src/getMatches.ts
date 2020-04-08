@@ -1,6 +1,7 @@
-import { Selection, TextEditor, TextLine, Range, commands, window, DecorationOptions, TextEditorDecorationType } from 'vscode';
+import { TextEditor, TextLine } from 'vscode';
 import { config } from './extension';
 import { NextLineToRead, IMatch } from './types';
+import { getIntRange } from './utils';
 
 /**
  * This is NOT a generator function that scans a document using a pattern similar to a water ripple. I
@@ -12,23 +13,23 @@ export function getMatchesAndAvailableJumpChars(editor: TextEditor, needle: stri
 	const { document, selection, visibleRanges } = editor;
 	let firstLineIndex = 0;
 	let lastLineIndex = document.lineCount - 1;
-	// const skipLines = [];// folded code
+	const skipLines: number[] = [];// folded code
 	if (config.onlyVisibleRanges) {
-		const range = visibleRanges[0];
-		firstLineIndex = range.start.line !== 0 ? range.start.line - 1 : 0;
-		lastLineIndex = range.end.line !== document.lineCount - 1 ? range.end.line + 1 : document.lineCount - 1;
+		const firstRange = visibleRanges[0];
+		firstLineIndex = firstRange.start.line !== 0 ? firstRange.start.line - 1 : 0;
+		lastLineIndex = firstRange.end.line !== document.lineCount - 1 ? firstRange.end.line + 1 : document.lineCount - 1;
 
-		// if (visibleRanges.length > 1) {
-		// 	let lastEndLine = visibleRanges[0].end.line;
-		// 	for (let i = 1; i < visibleRanges.length; i++) {
-		// 		const range = visibleRanges[i];
-		// 		const startLine = range.start.line;
-		// 		skipLines.push(...getIntRange(lastEndLine, startLine));
-		// 		lastEndLine = range.end.line;
-		// 	}
-		// }
+		if (visibleRanges.length > 1) {
+			let lastEndLine = visibleRanges[0].end.line;
+			for (let i = 1; i < visibleRanges.length; i++) {
+				const range = visibleRanges[i];
+				const startLine = range.start.line;
+				skipLines.push(...getIntRange(lastEndLine + 1, startLine));// folded code line numbers to skip them later
+				lastEndLine = range.end.line;
+				lastLineIndex = range.end.line;
+			}
+		}
 	}
-	// const documentIterator = documentRippleScanner(document, selection.end.line, firstLineIndex, lastLineIndex, skipLines);
 	const availableJumpChars = [...config.jumpChars];
 	const matches: { value: IMatch; index: number }[] = [];
 	// ────────────────────────────────────────────────────────────────────────────────
@@ -66,6 +67,9 @@ export function getMatchesAndAvailableJumpChars(editor: TextEditor, needle: stri
 			if (upLinePointer >= firstLineIndex) {
 				nextLineToRead = NextLineToRead.Higher;
 			}
+		}
+		if (skipLines.includes(index)) {
+			continue;
 		}
 
 		// @ts-ignore
