@@ -31,8 +31,8 @@
 			"properties": {
 				"findJump.jumpChars": {
 					"type": "string",
-					"default": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
-					"description": "Use custom alphabet for jump chars."
+					"default": "jfdksa;wibceghlmnopqrtuvxyzJFDKSABCEGHILMNOPQRTUVWXYZ",
+					"markdownDescription": "Use custom alphabet for jump chars. The order is important. Default value is assigned with qwerty keyboard in mind (Particularly, home row keys `A S D F J K l ;` put up front). Old alphabet: `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`."
 				},
 				"findJump.excludeNextChars": {
 					"type": "number",
@@ -42,7 +42,7 @@
 				"findJump.onlyVisibleRanges": {
 					"type": "boolean",
 					"default": true,
-					"description": "When checked - will search only in visible text in editor."
+					"description": "When enabled - will search only in visible text in editor."
 				},
 				"findJump.dimWhenActive": {
 					"type": "boolean",

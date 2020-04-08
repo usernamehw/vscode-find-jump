@@ -16,19 +16,27 @@ A few things to note:
 
 ## Settings
 
-> Color settings support referencing [Theme Color Id](https://code.visualstudio.com/api/references/theme-color).
+<details>
 
-- `findJump.letterBackground`: Background color of the extension's main decoration: letter to jump.
-- `findJump.letterForeground`: Color of the extension's main decoration: letter to jump.
-- `findJump.matchBackground`:
-- `findJump.matchForeground`:
-- `findJump.overviewRulerMatchForeground`: Color of the matches in the scrollbar area.
-- `findJump.light`:Overwrite colors for light themes.
-- `findJump.jumpChars`: Use custom alphabet for jump chars.
-- `findJump.excludeNextChars`: Number of next excluded characters. TODO: write better description.
-- `findJump.jumpCursorPosition`: Place where to jump cursor: before searching range or after.
-- `findJump.onlyVisibleRanges`: When checked - will search only in visible text in editor.
-- `findJump.dimWhenActive`: When checked - will show code as grayscale to see matches more easily. (copied from [another fork](https://marketplace.visualstudio.com/items?itemName=si3792.xray-jump))
+<summary> Table of contributed settings:</summary>
+
+| Name | Default | Description |
+| --- | --- | --- |
+| findJump.letterBackground | #4169E1 | Background color of the extension's main decoration: letter to jump. |
+| findJump.letterForeground | #ffffff | Color of the extension's main decoration: letter to jump. |
+| findJump.matchBackground | editor.wordHighlightBackground | |
+| findJump.matchForeground | | |
+| findJump.overviewRulerMatchForeground | #4169E1 | Color of the matches in the scrollbar area. |
+| findJump.light | | Overwrite colors for light themes. |
+| findJump.jumpChars | jfdksa;wibceghlmnopqrtuvxyzJFDKSABCEGHILMNOPQRTUVWXYZ | Use custom alphabet for jump chars. The order is important. Default value is assigned with qwerty keyboard in mind with home row keys `A S D F J K l ;` put in front. Old alphabet: `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`. |
+| findJump.excludeNextChars | **3** | |
+| findJump.jumpCursorPosition | start | Place where to jump cursor: before searching range or after. |
+| findJump.onlyVisibleRanges | **true** | When enabled - will search only in visible text in editor. |
+| findJump.dimWhenActive | **false** | When enabled - will show code as grayscale to see matches more easily. (copied from [another fork](https://marketplace.visualstudio.com/items?itemName=si3792.xray-jump)) |
+
+</details>
+
+> Color settings support referencing [Theme Color Id](https://code.visualstudio.com/api/references/theme-color).
 
 ## Commands
 
