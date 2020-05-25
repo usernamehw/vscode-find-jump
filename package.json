@@ -22,7 +22,8 @@
 	],
 	"activationEvents": [
 		"onCommand:findJump.activate",
-		"onCommand:findJump.activateWithSelection"
+		"onCommand:findJump.activateWithSelection",
+		"onCommand:findJump.goToFirstMatch"
 	],
 	"main": "./dist/extension",
 	"contributes": {
@@ -133,6 +134,11 @@
 				"category": "Find => Jump"
 			},
 			{
+				"command": "findJump.goToFirstMatch",
+				"title": "Jump to first match",
+				"category": "Find => Jump"
+			},
+			{
 				"command": "findJump.cancel",
 				"title": "Cancel",
 				"category": "Find => Jump"
@@ -167,6 +173,10 @@
 				},
 				{
 					"command": "findJump.activateWithSelection",
+					"when": "never"
+				},
+				{
+					"command": "findJump.goToFirstMatch",
 					"when": "never"
 				},
 				{
