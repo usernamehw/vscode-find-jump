@@ -163,6 +163,13 @@ export class FindJump {
 		this.updateStatusBarWithActivityIndicator();
 	};
 
+	goToFirstMatch = (): void => {
+		const inputs = Array.from(this.associationManager.associations.keys());
+
+		if (inputs.length > 0)
+			this.jump(inputs[inputs.length - 1]);
+	};
+
 	updateStatusBarWithActivityIndicator = (): void => {
 		const callback = (): void => {
 			this.inlineInput.updateStatusBar(this.userInput, this.numberOfMatches, this.activityIndicatorState);

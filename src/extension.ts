@@ -30,6 +30,10 @@ export function activate(context: ExtensionContext): void {
 		commands.registerTextEditorCommand(
 			`${EXTENSION_NAME}.backspace`,
 			findJump.backspace
+		),
+		commands.registerTextEditorCommand(
+			`${EXTENSION_NAME}.goToFirstMatch`,
+			findJump.goToFirstMatch
 		)
 	);
 
