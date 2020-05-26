@@ -164,10 +164,10 @@ export class FindJump {
 	};
 
 	goToFirstMatch = (): void => {
-		const inputs = Array.from(this.associationManager.associations.keys());
-
-		if (inputs.length > 0)
-			this.jump(inputs[inputs.length - 1]);
+		const inputs = Array.from(this.associationManager.associations.entries()).sort((a, b) => b[1].start.line - a[1].start.line);
+		if (inputs.length > 0) {
+			this.jump(inputs[inputs.length - 1][0]);
+		}
 	};
 
 	updateStatusBarWithActivityIndicator = (): void => {
