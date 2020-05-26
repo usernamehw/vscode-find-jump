@@ -1,3 +1,7 @@
+## 0.5.1 `26 May 2020`
+
+- ✨ Go to first match command `findJump.goToFirstMatch` [PR#22](https://github.com/usernamehw/vscode-find-jump/pull/22) by [@nilscox](https://github.com/nilscox)
+
 ## 0.5.0 `08 Apr 2020`
 
 - 🐛 Decorations should not render in folded lines
