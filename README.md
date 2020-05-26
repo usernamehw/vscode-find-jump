@@ -43,6 +43,7 @@ A few things to note:
 
 - `findJump.activate`: which activates Find-Jump
 - `findJump.activateWithSelection`: like `findJump.activate` but will make a selection from the current cursor position to the new cursor position
+- `findJump.goToFirstMatch`: jump to the first match
 
 # TODO (in the future):
 
