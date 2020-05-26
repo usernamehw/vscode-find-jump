@@ -16,8 +16,8 @@ export class FindJump {
 	activatedWithSelection = false;
 	numberOfMatches = 0;
 	decorationOptions: DecorationOptions[] = [];
-	dim!: TextEditorDecorationType;
-	bright!: TextEditorDecorationType;
+	dim?: TextEditorDecorationType;
+	bright?: TextEditorDecorationType;
 	allRanges: Range[] = [];
 
 	activate = (textEditor: TextEditor): void => {
