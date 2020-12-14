@@ -1,3 +1,7 @@
+## 0.5.2 `15 Dec 2020`
+
+- 🔨 Use extensionKind `ui` to support remote
+
 ## 0.5.1 `26 May 2020`
 
 - ✨ Go to first match command `findJump.goToFirstMatch` [PR#22](https://github.com/usernamehw/vscode-find-jump/pull/22) by [@nilscox](https://github.com/nilscox)
