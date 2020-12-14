@@ -5,7 +5,7 @@
 	"version": "0.5.1",
 	"publisher": "usernamehw",
 	"engines": {
-		"vscode": "^1.35.0"
+		"vscode": "^1.43.0"
 	},
 	"repository": {
 		"type": "git",
@@ -196,8 +196,8 @@
 		"watch": "webpack --mode development --watch --display=minimal"
 	},
 	"devDependencies": {
-		"@types/node": "^10.17.18",
-		"@types/vscode": "^1.35.0",
+		"@types/node": "^12.19.9",
+		"@types/vscode": "^1.43.0",
 		"@typescript-eslint/eslint-plugin": "^4.10.0",
 		"@typescript-eslint/parser": "^4.10.0",
 		"eslint": "^7.15.0",
