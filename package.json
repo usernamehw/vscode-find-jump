@@ -20,6 +20,9 @@
 		"jump",
 		"jumpy"
 	],
+	"extensionKind": [
+		"ui"
+	],
 	"activationEvents": [
 		"onCommand:findJump.activate",
 		"onCommand:findJump.activateWithSelection",
