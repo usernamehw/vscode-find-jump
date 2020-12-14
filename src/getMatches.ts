@@ -1,6 +1,6 @@
 import { TextEditor, TextLine } from 'vscode';
 import { config } from './extension';
-import { NextLineToRead, IMatch } from './types';
+import { IMatch, NextLineToRead } from './types';
 import { getIntRange } from './utils';
 
 /**

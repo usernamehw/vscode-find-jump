@@ -1,9 +1,8 @@
-import { Selection, TextEditor, TextLine, Range, commands, window, DecorationOptions, TextEditorDecorationType } from 'vscode';
-
-import { InlineInput } from './inlineInput';
+import { commands, DecorationOptions, Range, Selection, TextEditor, TextEditorDecorationType, window } from 'vscode';
 import { AssociationManager } from './associationManager';
-import { letterDecorationType, config } from './extension';
+import { config, letterDecorationType } from './extension';
 import { getMatchesAndAvailableJumpChars } from './getMatches';
+import { InlineInput } from './inlineInput';
 
 export class FindJump {
 	isActive = false;
@@ -116,7 +115,7 @@ export class FindJump {
 			this.activatedWithSelection ? this.textEditor.selection.start.line : line,
 			this.activatedWithSelection ? this.textEditor.selection.start.character : character,
 			line,
-			character
+			character,
 		);
 
 		this.cancel();
@@ -189,7 +188,9 @@ export class FindJump {
 	};
 
 	startDim = () => {
-		if (!config.dimWhenActive) return;
+		if (!config.dimWhenActive) {
+			return;
+		}
 		this.dim = window.createTextEditorDecorationType({
 			textDecoration: `none; filter: grayscale(1);`,
 		});

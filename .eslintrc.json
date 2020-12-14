@@ -10,21 +10,27 @@
 		"project": "./tsconfig.json"
 	},
 	"plugins": [
-		"@typescript-eslint"
+		"@typescript-eslint",
+		"no-autofix"
 	],
 	"parser": "@typescript-eslint/parser",
 	"extends": [
 		"plugin:@typescript-eslint/recommended"
 	],
 	"rules": {
+		"no-autofix/prefer-const": 1,
+
 		"@typescript-eslint/semi": 1,
 		"@typescript-eslint/adjacent-overload-signatures": 1,
 		"@typescript-eslint/array-type": [1, {
 			"default": "array"
 		}],
 		"@typescript-eslint/await-thenable": 0,
+		"@typescript-eslint/no-confusing-void-expression": 1,
 		"@typescript-eslint/ban-ts-ignore": 0,
+		"@typescript-eslint/explicit-module-boundary-types": 0,
 		"@typescript-eslint/ban-types": 1,
+		"@typescript-eslint/ban-ts-comment": 0,
 		"@typescript-eslint/consistent-type-definitions": [1, "interface"],
 		"@typescript-eslint/explicit-function-return-type": 0,
 		"@typescript-eslint/explicit-member-accessibility": 0,
@@ -33,6 +39,7 @@
 		"@typescript-eslint/indent": [1, "tab", {
 			"SwitchCase": 1
 		}],
+		"@typescript-eslint/interface-name-prefix": [0, "always"],
 		"@typescript-eslint/member-delimiter-style": [1, {
 			"multiline": {
 				"delimiter": "semi",
@@ -46,7 +53,7 @@
 		"@typescript-eslint/member-naming": [0, {
 			"private": "^_"
 		}],
-		"@typescript-eslint/member-ordering": 1,
+		"@typescript-eslint/member-ordering": 0,
 		"@typescript-eslint/no-array-constructor": 1,
 		"@typescript-eslint/no-empty-function": 0,
 		"@typescript-eslint/no-empty-interface": 0,
@@ -62,7 +69,7 @@
 		"@typescript-eslint/no-misused-new": 1,
 		"@typescript-eslint/no-misused-promises": 0,
 		"@typescript-eslint/no-namespace": 1,
-		"@typescript-eslint/no-non-null-assertion": 1,
+		"@typescript-eslint/no-non-null-assertion": 0,
 		"@typescript-eslint/no-parameter-properties": 0,
 		"@typescript-eslint/no-require-imports": 1,
 		"@typescript-eslint/no-type-alias": 0,
@@ -76,7 +83,7 @@
 		"@typescript-eslint/prefer-includes": 1,
 		"@typescript-eslint/prefer-readonly": 1,
 		"@typescript-eslint/prefer-regexp-exec": 1,
-		"@typescript-eslint/prefer-string-starts-ends-with": 1,
+		"@typescript-eslint/prefer-string-starts-ends-with": 0,
 		"@typescript-eslint/promise-function-async": 1,
 		"@typescript-eslint/require-array-sort-compare": 1,
 		"@typescript-eslint/require-await": 1,
@@ -91,15 +98,17 @@
 
 		"valid-jsdoc": 0,
 		"camelcase": 1,
-		"comma-dangle": [1, {
+		"comma-dangle": 0,
+		"@typescript-eslint/comma-dangle": [1, {
 			"arrays": "always-multiline",
 			"objects": "always-multiline",
 			"imports": "always-multiline",
 			"exports": "never",
-			"functions": "never"
+			"functions": "always-multiline",
+			"enums": "always"
 		}],
 		"no-alert": 0,
-		"curly": 0,
+		"curly": 1,
 		"no-var": 1,
 		"no-undef": 1,
 		"no-cond-assign": 1,
@@ -119,7 +128,7 @@
 		"spaced-comment": [1, "always", { "exceptions": ["/"] }],
 		"no-sparse-arrays": 1,
 		"no-unexpected-multiline": 1,
-		"no-unreachable": 1,
+		"no-unreachable": 0,
 		"use-isnan": 1,
 		"valid-typeof": [1, { "requireStringLiterals": true }],
 		"array-callback-return": 1,
@@ -165,7 +174,7 @@
 		"no-sequences": 1,
 		"no-throw-literal": 1,
 		"no-unmodified-loop-condition": 1,
-		"no-unused-expressions": 1,
+		"no-unused-expressions": 0,
 		"no-unused-labels": 1,
 		"no-useless-call": 1,
 		"no-useless-concat": 1,
@@ -176,7 +185,8 @@
 		"wrap-iife": 1,
 		"yoda": 1,
 		"no-label-var": 1,
-		"no-shadow": 1,
+		"no-shadow": 0,
+		"@typescript-eslint/no-shadow": 1,
 		"newline-before-return": 0,
 		"newline-after-var": 0,
 		"array-bracket-spacing": [
@@ -203,7 +213,7 @@
 			1,
 			"never"
 		],
-		"eol-last": 0,
+		"eol-last": 1,
 		"key-spacing": [
 			1,
 			{
@@ -232,7 +242,7 @@
 			0,
 			4
 		],
-		"new-cap": [1, { "capIsNewExceptions": ["Component"] }],
+		"new-cap": [1, { "capIsNewExceptions": ["Component", "Prop"] }],
 		"new-parens": 1,
 		"newline-per-chained-call": [0, { "ignoreChainWithDepth": 2 }],
 		"no-nested-ternary": 0,
@@ -264,10 +274,11 @@
 			}
 		],
 		"space-before-blocks": 1,
-		"space-before-function-paren": [
-			1,
-			"never"
-		],
+		"space-before-function-paren": [1, {
+			"anonymous": "never",
+			"named": "never",
+			"asyncArrow": "always"
+		}],
 		"space-in-parens": [
 			1,
 			"never"
@@ -289,9 +300,10 @@
 		"no-confusing-arrow": 0,
 		"no-this-before-super": 1,
 		"no-useless-computed-key": 1,
-		"no-useless-constructor": 1,
+		"no-useless-constructor": 0,
 		"no-dupe-class-members": 1,
-		"no-duplicate-imports": 1,
+		"no-duplicate-imports": 0,
+		"@typescript-eslint/no-duplicate-imports": ["warn"],
 		"no-iterator": 1,
 
 		"prefer-numeric-literals": 1,
@@ -319,8 +331,7 @@
 		"no-unused-vars": 0,
 		"func-names": 0,
 
-
-		"prefer-const": 1,
+		"prefer-const": 0,
 		"prefer-spread": 1,
 		"prefer-destructuring": 0,
 		"prefer-rest-params": 1,
