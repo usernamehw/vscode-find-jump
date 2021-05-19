@@ -178,7 +178,7 @@ export class FindJump {
 		this.inlineInput.updateStatusBar(this.userInput, this.numberOfMatches, this.activityIndicatorState);
 
 		if (this.intervalHandler === undefined) {
-			this.intervalHandler = setInterval(callback, 650);
+			this.intervalHandler = setInterval(callback, 800);
 		}
 	};
 
