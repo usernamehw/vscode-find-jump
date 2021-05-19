@@ -28,7 +28,7 @@ A few things to note:
 | findJump.overviewRulerMatchForeground | #4169E1 | Color of the matches in the scrollbar area. |
 | findJump.light | | Overwrite colors for light themes. |
 | findJump.jumpChars | jfdksa;wibceghlmnopqrtuvxyz<br>JFDKSABCEGHILMNOPQRTUVWXYZ | Use custom alphabet for jump chars. The order is important. Default value is assigned with qwerty keyboard in mind with home row keys `A S D F J K l ;` put in front. Old alphabet: `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`. |
-| findJump.excludeNextChars | **3** | |
+| findJump.excludeNextChars | **4** | |
 | findJump.jumpCursorPosition | start | Place where to jump cursor: before searching range or after. |
 | findJump.onlyVisibleRanges | **true** | When enabled - will search only in visible text in editor. |
 | findJump.dimWhenActive | **false** | When enabled - will show code as grayscale to see matches more easily. (copied from [another fork](https://marketplace.visualstudio.com/items?itemName=si3792.xray-jump)) |

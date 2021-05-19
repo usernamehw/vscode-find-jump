@@ -42,7 +42,7 @@
 				},
 				"findJump.excludeNextChars": {
 					"type": "number",
-					"default": 3,
+					"default": 4,
 					"description": "Number of next excluded characters."
 				},
 				"findJump.onlyVisibleRanges": {
