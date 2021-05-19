@@ -33,6 +33,7 @@ A few things to note:
 | findJump.onlyVisibleRanges | **true** | When enabled - will search only in visible text in editor. |
 | findJump.dimWhenActive | **false** | When enabled - will show code as grayscale to see matches more easily. (copied from [another fork](https://marketplace.visualstudio.com/items?itemName=si3792.xray-jump)) |
 | findJump.activateToToggle | **true** | When enabled - will toggle active state for default `findJump.activate*` commands. |
+| findJump.positionAbsolute | **false** | When enabled - position decorations on top of the editor text (without shifting text). |
 
 </details>
 
@@ -48,4 +49,3 @@ A few things to note:
 
 - [ ] ✨ Option to search in all visible editors (split/grid)
 - [ ] ✨ Command to go to the next/previous match
-- [ ] 🐎 Option to render decoraitons on top of the text instead of prepending (that moves the entire text)

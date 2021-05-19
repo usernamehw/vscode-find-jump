@@ -1,15 +1,15 @@
-import vscode, { commands, ExtensionContext, window, workspace } from 'vscode';
+import { commands, ConfigurationChangeEvent, ExtensionContext, TextEditorDecorationType, ThemableDecorationAttachmentRenderOptions, window, workspace } from 'vscode';
 import { FindJump } from './findJump';
 import { subscriptions as inlineInputSubscriptions } from './inlineInput';
-import { IConfig } from './types';
+import { ExtensionConfig } from './types';
 import { pickColorType } from './utils';
 
-export let config: IConfig;
-export let letterDecorationType: vscode.TextEditorDecorationType;
+export let extensionConfig: ExtensionConfig;
+export let letterDecorationType: TextEditorDecorationType;
+export const EXTENSION_NAME = 'findJump';
 
-export function activate(context: ExtensionContext): void {
-	const EXTENSION_NAME = 'findJump';
-	config = workspace.getConfiguration(EXTENSION_NAME) as any as IConfig;
+export function activate(context: ExtensionContext) {
+	extensionConfig = workspace.getConfiguration(EXTENSION_NAME) as any as ExtensionConfig;
 	updateDecorationTypes();
 	const findJump = new FindJump();
 
@@ -36,12 +36,12 @@ export function activate(context: ExtensionContext): void {
 		),
 	);
 
-	function updateConfig(e: vscode.ConfigurationChangeEvent): void {
+	function updateConfig(e: ConfigurationChangeEvent): void {
 		if (!e.affectsConfiguration(EXTENSION_NAME)) {
 			return;
 		}
 
-		config = workspace.getConfiguration(EXTENSION_NAME) as any as IConfig;
+		extensionConfig = workspace.getConfiguration(EXTENSION_NAME) as any as ExtensionConfig;
 		updateDecorationTypes();
 		findJump.cancel();
 	}
@@ -50,29 +50,42 @@ export function activate(context: ExtensionContext): void {
 			letterDecorationType.dispose();
 		}
 
-		const letterBackground = pickColorType(config.letterBackground);
-		const letterBackgroundLight = pickColorType(config.light.letterBackground);
+		const letterBackground = pickColorType(extensionConfig.letterBackground);
+		const letterBackgroundLight = pickColorType(extensionConfig.light.letterBackground);
 
-		letterDecorationType = window.createTextEditorDecorationType({
-			backgroundColor: pickColorType(config.matchBackground),
-			color: pickColorType(config.matchForeground),
-			before: {
+		let beforeDecoration: ThemableDecorationAttachmentRenderOptions;
+		if (extensionConfig.positionAbsolute) {
+			beforeDecoration = {
+				backgroundColor: letterBackground,
+				border: `1px solid`,
+				borderColor: letterBackground,
+				color: pickColorType(extensionConfig.letterForeground),
+				textDecoration: 'none;position:absolute;z-index:999999;max-height:100%;',
+			};
+		} else {
+			beforeDecoration = {
 				margin: '0 5px 0 5px',
 				backgroundColor: letterBackground,
 				border: `3px solid`,
 				borderColor: letterBackground,
-				color: pickColorType(config.letterForeground),
-			},
+				color: pickColorType(extensionConfig.letterForeground),
+			};
+		}
+
+		letterDecorationType = window.createTextEditorDecorationType({
+			backgroundColor: pickColorType(extensionConfig.matchBackground),
+			color: pickColorType(extensionConfig.matchForeground),
+			before: beforeDecoration,
 			light: {
-				backgroundColor: pickColorType(config.light.matchBackground),
-				color: pickColorType(config.light.matchForeground),
+				backgroundColor: pickColorType(extensionConfig.light.matchBackground),
+				color: pickColorType(extensionConfig.light.matchForeground),
 				before: {
 					backgroundColor: letterBackgroundLight,
 					borderColor: letterBackgroundLight,
-					color: pickColorType(config.light.letterForeground),
+					color: pickColorType(extensionConfig.light.letterForeground),
 				},
 			},
-			overviewRulerColor: pickColorType(config.overviewRulerMatchForeground),
+			overviewRulerColor: pickColorType(extensionConfig.overviewRulerMatchForeground),
 			overviewRulerLane: 2, // vscode.OverviewRulerLane.Center
 		});
 	}

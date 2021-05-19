@@ -1,6 +1,6 @@
 import { commands, DecorationOptions, Range, Selection, TextEditor, TextEditorDecorationType, window } from 'vscode';
 import { AssociationManager } from './associationManager';
-import { config, letterDecorationType } from './extension';
+import { extensionConfig, letterDecorationType } from './extension';
 import { getMatchesAndAvailableJumpChars } from './getMatches';
 import { InlineInput } from './inlineInput';
 
@@ -24,7 +24,7 @@ export class FindJump {
 
 		if (this.isActive) {
 			this.cancel();
-			if (config.activateToToggle) {
+			if (extensionConfig.activateToToggle) {
 				return;
 			}
 		}
@@ -108,7 +108,7 @@ export class FindJump {
 			return;
 		}
 
-		const cursorPosition = config.jumpCursorPosition;
+		const cursorPosition = extensionConfig.jumpCursorPosition;
 		const { line, character } = range[cursorPosition];
 
 		this.textEditor.selection = new Selection(
@@ -188,7 +188,7 @@ export class FindJump {
 	};
 
 	startDim = () => {
-		if (!config.dimWhenActive) {
+		if (!extensionConfig.dimWhenActive) {
 			return;
 		}
 		this.dim = window.createTextEditorDecorationType({

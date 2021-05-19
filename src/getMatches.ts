@@ -1,5 +1,5 @@
 import { TextEditor, TextLine } from 'vscode';
-import { config } from './extension';
+import { extensionConfig } from './extension';
 import { IMatch, NextLineToRead } from './types';
 import { getIntRange } from './utils';
 
@@ -14,7 +14,7 @@ export function getMatchesAndAvailableJumpChars(editor: TextEditor, needle: stri
 	let firstLineIndex = 0;
 	let lastLineIndex = document.lineCount - 1;
 	const skipLines: number[] = [];// folded code
-	if (config.onlyVisibleRanges) {
+	if (extensionConfig.onlyVisibleRanges) {
 		const firstRange = visibleRanges[0];
 		firstLineIndex = firstRange.start.line !== 0 ? firstRange.start.line - 1 : 0;
 		lastLineIndex = firstRange.end.line !== document.lineCount - 1 ? firstRange.end.line + 1 : document.lineCount - 1;
@@ -30,7 +30,7 @@ export function getMatchesAndAvailableJumpChars(editor: TextEditor, needle: stri
 			}
 		}
 	}
-	const availableJumpChars = [...config.jumpChars];
+	const availableJumpChars = [...extensionConfig.jumpChars];
 	const matches: { value: IMatch; index: number }[] = [];
 	// ────────────────────────────────────────────────────────────────────────────────
 	const startingLine = selection.end.line;
@@ -109,7 +109,7 @@ function getLineMatches(line: TextLine, needle: string): IMatch[] {
 	) {
 		const start = index;
 		const end = index + needle.length;
-		const excludedChars = haystack.slice(end, end + config.excludeNextChars).replace(/[^a-z]/gi, '').split('');
+		const excludedChars = haystack.slice(end, end + extensionConfig.excludeNextChars).replace(/[^a-z]/gi, '').split('');
 		indexes.push({ start, end, excludedChars });
 		iterationNumber++;
 	}

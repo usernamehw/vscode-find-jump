@@ -1,10 +1,10 @@
 import { Range, DecorationOptions } from 'vscode';
 
-import { config } from './extension';
+import { extensionConfig } from './extension';
 
 export class AssociationManager {
 	public associations: Map<string, Range> = new Map();
-	public jumpChars = config.jumpChars;
+	public jumpChars = extensionConfig.jumpChars;
 
 	public createAssociation = (char: string, range: Range): DecorationOptions => {
 		const finalLetter = /[a-zA-Z]/.test(char) && char === char.toUpperCase() ? `⇧${char.toLowerCase()}` : char;

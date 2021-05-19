@@ -1,7 +1,8 @@
-export interface IConfig {
+export interface ExtensionConfig {
 	jumpChars: string;
 	excludeNextChars: number;
 	onlyVisibleRanges: boolean;
+	positionAbsolute: boolean;
 	dimWhenActive: boolean;
 	activateToToggle: boolean;
 	jumpCursorPosition: 'end' | 'start';

@@ -45,6 +45,11 @@
 					"default": 4,
 					"description": "Number of next excluded characters."
 				},
+				"findJump.positionAbsolute": {
+					"type": "boolean",
+					"default": false,
+					"description": "When enabled - position decorations on top of the editor text (without shifting text)."
+				},
 				"findJump.onlyVisibleRanges": {
 					"type": "boolean",
 					"default": true,
