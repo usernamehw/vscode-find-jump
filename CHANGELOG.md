@@ -1,3 +1,9 @@
+## 0.6.0 `20 May 2021`
+
+- ✨ Option to render decorations without shifting text `"findJump.positionAbsolute": true,`
+- 💥 Change default `findJump.excludeNextChars` from **3** to **4**
+- 💥 Rename `findJump.overviewRulerMatchForeground` to `findJump.scrollbarMatchForeground`
+
 ## 0.5.2 `15 Dec 2020`
 
 - 🔨 Use extensionKind `ui` to support remote
