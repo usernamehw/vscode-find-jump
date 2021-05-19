@@ -4,7 +4,7 @@ export interface IConfig {
 	onlyVisibleRanges: boolean;
 	dimWhenActive: boolean;
 	activateToToggle: boolean;
-	jumpCursorPosition: 'start' | 'end';
+	jumpCursorPosition: 'end' | 'start';
 
 	letterBackground: string;
 	letterForeground: string;

@@ -21,6 +21,7 @@
 		"no-autofix/prefer-const": 1,
 
 		"@typescript-eslint/semi": 1,
+		"@typescript-eslint/sort-type-union-intersection-members": 1,
 		"@typescript-eslint/adjacent-overload-signatures": 1,
 		"@typescript-eslint/array-type": [1, {
 			"default": "array"
@@ -110,7 +111,7 @@
 		"no-alert": 0,
 		"curly": 1,
 		"no-var": 1,
-		"no-undef": 1,
+		"no-undef": 0,
 		"no-cond-assign": 1,
 		"no-constant-condition": 1,
 		"no-dupe-keys": 1,
@@ -331,12 +332,15 @@
 		"no-unused-vars": 0,
 		"func-names": 0,
 
+
 		"prefer-const": 0,
 		"prefer-spread": 1,
 		"prefer-destructuring": 0,
 		"prefer-rest-params": 1,
 		"prefer-template": 1,
-		"prefer-arrow-callback": 1,
+		"prefer-arrow-callback": [1, {
+			"allowNamedFunctions": true
+		}],
 		"arrow-spacing": [1, { "before": true, "after": true }],
 		"arrow-parens": [1, "as-needed", { "requireForBlockBody": false }],
 		"arrow-body-style": [1, "as-needed"],
