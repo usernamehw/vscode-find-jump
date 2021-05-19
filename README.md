@@ -13,37 +13,38 @@ A few things to note:
 * The jump character is always a single letter. Sometimes the jump character needs to be pressed with the SHIFT key, which would be indicated on the jump location like `⇧z`
 * Pressing the arrow keys or the enter key will exit Find-Jump
 
-## Settings
+<!-- COMMANDS_START -->
+## Commands (3)
 
-<details>
+|Command|Description|
+|-|-|
+|findJump.activate|Find => Jump: Activate|
+|findJump.activateWithSelection|Find => Jump: Activate in selection mode|
+|findJump.goToFirstMatch|Find => Jump: Jump to first match|
+<!-- COMMANDS_END -->
 
-<summary> Table of contributed settings:</summary>
+<!-- SETTINGS_START -->
+## Settings (13)
 
-| Name | Default | Description |
-| --- | --- | --- |
-| findJump.letterBackground | #4169E1 | Background color of the extension's main decoration: letter to jump. |
-| findJump.letterForeground | #ffffff | Color of the extension's main decoration: letter to jump. |
-| findJump.matchBackground | editor.wordHighlightBackground | |
-| findJump.matchForeground | | |
-| findJump.overviewRulerMatchForeground | #4169E1 | Color of the matches in the scrollbar area. |
-| findJump.light | | Overwrite colors for light themes. |
-| findJump.jumpChars | jfdksa;wibceghlmnopqrtuvxyz<br>JFDKSABCEGHILMNOPQRTUVWXYZ | Use custom alphabet for jump chars. The order is important. Default value is assigned with qwerty keyboard in mind with home row keys `A S D F J K l ;` put in front. Old alphabet: `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`. |
-| findJump.excludeNextChars | **4** | |
-| findJump.jumpCursorPosition | start | Place where to jump cursor: before searching range or after. |
-| findJump.onlyVisibleRanges | **true** | When enabled - will search only in visible text in editor. |
-| findJump.dimWhenActive | **false** | When enabled - will show code as grayscale to see matches more easily. (copied from [another fork](https://marketplace.visualstudio.com/items?itemName=si3792.xray-jump)) |
-| findJump.activateToToggle | **true** | When enabled - will toggle active state for default `findJump.activate*` commands. |
-| findJump.positionAbsolute | **false** | When enabled - position decorations on top of the editor text (without shifting text). |
-
-</details>
+|Setting|Default|Description|
+|-|-|-|
+|findJump.jumpChars|"jfdksa;..."|Use custom alphabet for jump chars. The order is important. Default value is assigned with qwerty keyboard in mind (Particularly, home row keys `A S D F J K l ;` put up front). Old alphabet: `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`.|
+|findJump.excludeNextChars|**4**|Letters are used to type text where to go but also as symbols for quick jump. This setting controls how many next character of the current match will be excluded from being used as a symbol for a jump.|
+|findJump.positionAbsolute|**false**|When enabled - position decorations on top of the editor text (without shifting text).|
+|findJump.onlyVisibleRanges|**true**|When enabled - will search only in visible text in editor.|
+|findJump.dimWhenActive|**false**|When enabled - will show code as grayscale to see matches more easily.|
+|findJump.activateToToggle|**true**|When enabled - will toggle active state for default `findJump.activate*` commands.|
+|findJump.jumpCursorPosition|"start"|Place where to jump cursor.|
+|findJump.letterBackground|"#4169E1"|Background color of the extension's main decoration: letter to jump.|
+|findJump.letterForeground|"#ffffff"|Color of the extension's main decoration: letter to jump.|
+|findJump.matchBackground|"editor.wordHighlightBackground"||
+|findJump.matchForeground|""||
+|findJump.scrollbarMatchForeground|"#4169E1"|Color of the matches in the scrollbar area.|
+|findJump.light|{}|Overwrite colors for light themes.|
+<!-- SETTINGS_END -->
 
 > Color settings support referencing [Theme Color Id](https://code.visualstudio.com/api/references/theme-color).
 
-## Commands
-
-- `findJump.activate`: which activates Find-Jump
-- `findJump.activateWithSelection`: like `findJump.activate` but will make a selection from the current cursor position to the new cursor position
-- `findJump.goToFirstMatch`: jump to the first match
 
 # TODO (in the future):
 

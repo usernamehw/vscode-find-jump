@@ -43,7 +43,7 @@
 				"findJump.excludeNextChars": {
 					"type": "number",
 					"default": 4,
-					"description": "Number of next excluded characters."
+					"description": "Letters are used to type text where to go but also as symbols for quick jump. This setting controls how many next character of the current match will be excluded from being used as a symbol for a jump."
 				},
 				"findJump.positionAbsolute": {
 					"type": "boolean",
@@ -64,6 +64,19 @@
 					"type": "boolean",
 					"default": true,
 					"description": "When enabled - will toggle active state for default `findJump.activate*` commands."
+				},
+				"findJump.jumpCursorPosition": {
+					"type": "string",
+					"default": "start",
+					"enum": [
+						"start",
+						"end"
+					],
+					"description": "Place where to jump cursor.",
+					"enumDescriptions": [
+						"Jump to the start of the range.",
+						"Jump to the end of the range."
+					]
 				},
 				"findJump.letterBackground": {
 					"type": "string",
@@ -89,7 +102,7 @@
 					"description": "",
 					"format": "color"
 				},
-				"findJump.overviewRulerMatchForeground": {
+				"findJump.scrollbarMatchForeground": {
 					"type": "string",
 					"default": "#4169E1",
 					"description": "Color of the matches in the scrollbar area.",
@@ -125,19 +138,6 @@
 							"format": "color"
 						}
 					}
-				},
-				"findJump.jumpCursorPosition": {
-					"type": "string",
-					"default": "start",
-					"enum": [
-						"start",
-						"end"
-					],
-					"description": "Place where to jump cursor.",
-					"enumDescriptions": [
-						"Jump to the start of the range.",
-						"Jump to the end of the range."
-					]
 				}
 			}
 		},

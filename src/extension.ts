@@ -85,7 +85,7 @@ export function activate(context: ExtensionContext) {
 					color: pickColorType(extensionConfig.light.letterForeground),
 				},
 			},
-			overviewRulerColor: pickColorType(extensionConfig.overviewRulerMatchForeground),
+			overviewRulerColor: pickColorType(extensionConfig.scrollbarMatchForeground),
 			overviewRulerLane: 2, // vscode.OverviewRulerLane.Center
 		});
 	}

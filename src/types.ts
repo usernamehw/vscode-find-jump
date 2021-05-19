@@ -19,7 +19,7 @@ export interface ExtensionConfig {
 		matchForeground: string;
 	};
 
-	overviewRulerMatchForeground: string;
+	scrollbarMatchForeground: string;
 }
 
 export interface IMatch {
