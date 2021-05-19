@@ -81,7 +81,8 @@
 				"findJump.matchForeground": {
 					"type": "string",
 					"default": "",
-					"description": ""
+					"description": "",
+					"format": "color"
 				},
 				"findJump.overviewRulerMatchForeground": {
 					"type": "string",
