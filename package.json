@@ -20,7 +20,14 @@
 		"AceJump",
 		"EasyMotion",
 		"jump",
-		"jumpy"
+		"jumpy",
+		"cursor",
+		"move",
+		"key",
+		"keyboard",
+		"keybinding",
+		"navigation",
+		"goto"
 	],
 	"extensionKind": [
 		"ui"
@@ -38,7 +45,7 @@
 				"findJump.jumpChars": {
 					"type": "string",
 					"default": "jfdksa;wibceghlmnopqrtuvxyzJFDKSABCEGHILMNOPQRTUVWXYZ",
-					"markdownDescription": "Use custom alphabet for jump chars. The order is important. Default value is assigned with qwerty keyboard in mind (Particularly, home row keys `A S D F J K l ;` put up front). Old alphabet: `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`."
+					"markdownDescription": "Use custom alphabet for jump chars. The order is important. Default value is assigned with qwerty keyboard in mind (Particularly, home row keys `A S D F J K l ;` put up front)."
 				},
 				"findJump.excludeNextChars": {
 					"type": "number",

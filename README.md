@@ -28,7 +28,7 @@ A few things to note:
 
 |Setting|Default|Description|
 |-|-|-|
-|findJump.jumpChars|"jfdksa;..."|Use custom alphabet for jump chars. The order is important. Default value is assigned with qwerty keyboard in mind (Particularly, home row keys `A S D F J K l ;` put up front). Old alphabet: `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`.|
+|findJump.jumpChars|"jfdksa;..."|Use custom alphabet for jump chars. The order is important. Default value is assigned with qwerty keyboard in mind (Particularly, home row keys `A S D F J K l ;` put up front).|
 |findJump.excludeNextChars|**4**|Letters are used to type text where to go but also as symbols for quick jump. This setting controls how many next character of the current match will be excluded from being used as a symbol for a jump.|
 |findJump.positionAbsolute|**false**|When enabled - position decorations on top of the editor text (without shifting text).|
 |findJump.onlyVisibleRanges|**true**|When enabled - will search only in visible text in editor.|
