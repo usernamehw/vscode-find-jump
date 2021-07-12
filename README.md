@@ -35,12 +35,12 @@ A few things to note:
 |findJump.dimWhenActive|**false**|When enabled - will show code as grayscale to see matches more easily.|
 |findJump.activateToToggle|**true**|When enabled - will toggle active state for default `findJump.activate*` commands.|
 |findJump.jumpCursorPosition|"start"|Place where to jump cursor.|
-|findJump.letterBackground|"#4169E1"|Background color of the extension's main decoration: letter to jump.|
-|findJump.letterForeground|"#ffffff"|Color of the extension's main decoration: letter to jump.|
-|findJump.matchBackground|"editor.wordHighlightBackground"||
+|findJump.letterBackground|"\#4169E1"|Background color of the extension&#39;s main decoration: letter to jump.|
+|findJump.letterForeground|"\#ffffff"|Color of the extension&#39;s main decoration: letter to jump.|
+|findJump.matchBackground|"editor\.wordHighlightBackground"||
 |findJump.matchForeground|""||
-|findJump.scrollbarMatchForeground|"#4169E1"|Color of the matches in the scrollbar area.|
-|findJump.light|{}|Overwrite colors for light themes.|
+|findJump.scrollbarMatchForeground|"\#4169E1"|Color of the matches in the scrollbar area.|
+|findJump.light|\{\}|Overwrite colors for light themes.|
 <!-- SETTINGS_END -->
 
 > Color settings support referencing [Theme Color Id](https://code.visualstudio.com/api/references/theme-color).

@@ -332,7 +332,7 @@
 		"no-unused-vars": 0,
 		"func-names": 0,
 
-
+		"no-bitwise": 1,
 		"prefer-const": 0,
 		"prefer-spread": 1,
 		"prefer-destructuring": 0,
