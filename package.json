@@ -49,7 +49,7 @@
 				},
 				"findJump.excludeNextChars": {
 					"type": "number",
-					"default": 4,
+					"default": 3,
 					"description": "Letters are used to type text where to go but also as symbols for quick jump. This setting controls how many next character of the current match will be excluded from being used as a symbol for a jump."
 				},
 				"findJump.positionAbsolute": {

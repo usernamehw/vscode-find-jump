@@ -1,6 +1,6 @@
 import { commands, DecorationOptions, Range, Selection, TextEditor, TextEditorDecorationType, window } from 'vscode';
 import { AssociationManager } from './associationManager';
-import { extensionConfig, letterDecorationType } from './extension';
+import { extensionConfig, Global } from './extension';
 import { getMatchesAndAvailableJumpChars } from './getMatches';
 import { InlineInput } from './inlineInput';
 
@@ -90,7 +90,7 @@ export class FindJump {
 			this.decorationOptions.push(this.associationManager.createAssociation(availableJumpChar, range));
 		}
 
-		this.textEditor.setDecorations(letterDecorationType, this.decorationOptions);
+		this.textEditor.setDecorations(Global.letterDecorationType, this.decorationOptions);
 
 		if (this.dim && matches.length > 0) {
 			this.bright = this.bright || window.createTextEditorDecorationType({
@@ -129,7 +129,7 @@ export class FindJump {
 		this.activatedWithSelection = false;
 		this.numberOfMatches = 0;
 		this.userInput = '';
-		this.textEditor.setDecorations(letterDecorationType, []);
+		this.textEditor.setDecorations(Global.letterDecorationType, []);
 		this.clearActivityIndicator();
 		this.inlineInput.destroy();
 		this.associationManager.dispose();
