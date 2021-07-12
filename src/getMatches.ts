@@ -33,7 +33,7 @@ export function getMatchesAndAvailableJumpChars(editor: TextEditor, needle: stri
 	const availableJumpChars = [...extensionConfig.jumpChars];
 	const matches: { value: IMatch; index: number }[] = [];
 	// ────────────────────────────────────────────────────────────────────────────────
-	const startingLine = selection.end.line;
+	const startingLine = isCursorOutOfViewport(editor) ? getCenterOfViewportLine(editor) : selection.end.line;
 	let nextLineToRead: NextLineToRead = NextLineToRead.Current;
 	let upLinePointer = startingLine - 1;
 	let downLinePointer = startingLine + 1;
@@ -115,4 +115,20 @@ function getLineMatches(line: TextLine, needle: string): IMatch[] {
 	}
 
 	return indexes;
+}
+/**
+ * Test if cursor is visible in the editor.
+ */
+function isCursorOutOfViewport(editor: TextEditor) {
+	return !editor.visibleRanges.some(range => range.contains(editor.selection.active));
+}
+/**
+ * Get line number approx in the middle of the screen.
+ */
+function getCenterOfViewportLine(editor: TextEditor) {
+	const lines: number[] = [];
+	for (const range of editor.visibleRanges) {
+		lines.push(...getIntRange(range.start.line, range.end.line));
+	}
+	return lines[Math.round(lines.length / 2)];
 }
