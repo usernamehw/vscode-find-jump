@@ -45,7 +45,7 @@
 				"findJump.jumpChars": {
 					"type": "string",
 					"default": "jfdksa;wibceghlmnopqrtuvxyzJFDKSABCEGHILMNOPQRTUVWXYZ",
-					"markdownDescription": "Use custom alphabet for jump chars. The order is important. Default value is assigned with qwerty keyboard in mind (Particularly, home row keys `A S D F J K l ;` put up front)."
+					"markdownDescription": "Use custom alphabet for jump chars. The order is important. Default value is assigned with qwerty keyboard in mind (Particularly, home row keys `A S D F J K L ;` put up front)."
 				},
 				"findJump.excludeNextChars": {
 					"type": "number",
