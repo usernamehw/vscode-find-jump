@@ -1,8 +1,6 @@
 // @ts-check
-
 'use strict';
 
-const webpack = require('webpack');
 const path = require('path');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
@@ -25,8 +23,8 @@ module.exports = (env, options) => {
 		resolve: { // support reading TypeScript and JavaScript files, 📖 -> https://github.com/TypeStrong/ts-loader
 			extensions: ['.ts', '.js'],
 			alias: {
-				"src": path.resolve('./src')
-			}
+				src: path.resolve('./src'),
+			},
 		},
 		module: {
 			rules: [{
@@ -38,21 +36,16 @@ module.exports = (env, options) => {
 			}],
 		},
 		plugins: [
+			// @ts-ignore
 			new FriendlyErrorsWebpackPlugin(),
 		],
 	};
 
 	if (options.mode === 'production') {
 		// Prod
+		config.devtool = false;
 	} else {
 		// Dev
-		config.module.rules[0] = {
-			test: /\.ts$/,
-			exclude: /node_modules/,
-			use: [{
-				loader: 'ts-loader',
-			}],
-		};
 	}
 
 	return config;
