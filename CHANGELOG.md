@@ -1,3 +1,7 @@
+## 0.6.1 `12 Jul 2021`
+
+- ✨ Jumping should work even if the cursor is out of editor viewport
+
 ## 0.6.0 `20 May 2021`
 
 - ✨ Option to render decorations without shifting text `"findJump.positionAbsolute": true,`
