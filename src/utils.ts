@@ -18,3 +18,7 @@ export function getIntRange(start: number, end: number): number[] {
 	}
 	return range;
 }
+
+export function first<T>(items: T[], compare: (a: T, b: T)=> number): T | undefined {
+	return items.slice(1).reduce((min, item) => compare(item, min) > 0 ? min : item, items[0]);
+}
