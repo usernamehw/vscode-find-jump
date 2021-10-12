@@ -1,3 +1,7 @@
+## 0.6.2 `12 Oct 2021`
+
+- 🐛 `goToFirstMatch` selects the last match on a line that has multiple match (PR [#26](https://github.com/usernamehw/vscode-find-jump/pull/26) by [@ccjmne](https://github.com/ccjmne))
+
 ## 0.6.1 `12 Jul 2021`
 
 - ✨ Jumping should work even if the cursor is out of editor viewport
