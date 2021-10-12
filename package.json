@@ -30,7 +30,8 @@
 		"goto"
 	],
 	"extensionKind": [
-		"ui"
+		"ui",
+		"workspace"
 	],
 	"activationEvents": [
 		"onCommand:findJump.activate",
