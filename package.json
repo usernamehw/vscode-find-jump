@@ -16,6 +16,7 @@
 	],
 	"icon": "img/icon.png",
 	"qna": false,
+	"license": "MIT",
 	"keywords": [
 		"AceJump",
 		"EasyMotion",
