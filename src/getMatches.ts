@@ -75,10 +75,6 @@ export function getMatchesAndAvailableJumpChars(editor: TextEditor, needle: stri
 		// @ts-ignore
 		const lineMatches = getLineMatches(line, needle);
 		for (const lineMatch of lineMatches) {
-			if (matches.length >= availableJumpChars.length) {
-				break outer;
-			}
-
 			matches.push({ value: lineMatch, index });
 
 			for (const excludedChar of lineMatch.excludedChars) {
