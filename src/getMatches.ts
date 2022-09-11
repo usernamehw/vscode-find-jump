@@ -37,7 +37,7 @@ export function getMatchesAndAvailableJumpChars(editor: TextEditor, needle: stri
 	let nextLineToRead: NextLineToRead = NextLineToRead.Current;
 	let upLinePointer = startingLine - 1;
 	let downLinePointer = startingLine + 1;
-	outer: for (let line, index = 0; upLinePointer >= firstLineIndex || downLinePointer <= lastLineIndex;) {
+	for (let line, index = 0; upLinePointer >= firstLineIndex || downLinePointer <= lastLineIndex;) {
 		if (nextLineToRead === NextLineToRead.Current) {
 			line = document.lineAt(startingLine);
 			index = startingLine;
