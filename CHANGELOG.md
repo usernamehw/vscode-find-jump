@@ -1,3 +1,7 @@
+## 0.6.3 `11 Sep 2022`
+
+- 🐛 Fix letter exclusion (PR [#31](https://github.com/usernamehw/vscode-find-jump/pull/31) by [@wkordalski](https://github.com/wkordalski))
+
 ## 0.6.2 `12 Oct 2021`
 
 - 🐛 `goToFirstMatch` selects the last match on a line that has multiple match (PR [#26](https://github.com/usernamehw/vscode-find-jump/pull/26) by [@ccjmne](https://github.com/ccjmne))
