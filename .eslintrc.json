@@ -5,7 +5,7 @@
 		"es6": true
 	},
 	"parserOptions": {
-		"ecmaVersion": 2018,
+		"ecmaVersion": 2019,
 		"sourceType": "module",
 		"project": "./tsconfig.json"
 	},
@@ -37,6 +37,16 @@
 		"@typescript-eslint/explicit-member-accessibility": 0,
 		"@typescript-eslint/func-call-spacing": 1,
 		"@typescript-eslint/generic-type-naming": 0,
+		"@typescript-eslint/naming-convention": [
+			"warn",
+			{
+				"selector": "enumMember",
+				"format": [
+					"PascalCase",
+					"UPPER_CASE"
+				]
+			}
+		],
 		"@typescript-eslint/indent": [1, "tab", {
 			"SwitchCase": 1
 		}],
@@ -50,9 +60,6 @@
 				"delimiter": "semi",
 				"requireLast": false
 			}
-		}],
-		"@typescript-eslint/member-naming": [0, {
-			"private": "^_"
 		}],
 		"@typescript-eslint/member-ordering": 0,
 		"@typescript-eslint/no-array-constructor": 1,
@@ -83,7 +90,7 @@
 		"@typescript-eslint/prefer-for-of": 1,
 		"@typescript-eslint/prefer-includes": 1,
 		"@typescript-eslint/prefer-readonly": 1,
-		"@typescript-eslint/prefer-regexp-exec": 1,
+		"@typescript-eslint/prefer-regexp-exec": 0,
 		"@typescript-eslint/prefer-string-starts-ends-with": 0,
 		"@typescript-eslint/promise-function-async": 1,
 		"@typescript-eslint/require-array-sort-compare": 1,
@@ -108,6 +115,7 @@
 			"functions": "always-multiline",
 			"enums": "always"
 		}],
+		"no-bitwise": 1,
 		"no-alert": 0,
 		"curly": 1,
 		"no-var": 1,
@@ -332,7 +340,7 @@
 		"no-unused-vars": 0,
 		"func-names": 0,
 
-		"no-bitwise": 1,
+
 		"prefer-const": 0,
 		"prefer-spread": 1,
 		"prefer-destructuring": 0,
