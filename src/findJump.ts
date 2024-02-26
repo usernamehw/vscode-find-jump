@@ -109,7 +109,9 @@ export class FindJump {
 			return;
 		}
 
-		const cursorPosition = extensionConfig.jumpCursorPosition;
+		const cursorPosition = extensionConfig.jumpCursorPosition !== 'selection-end'
+			? extensionConfig.jumpCursorPosition
+			: this.activatedWithSelection ? 'end' : 'start';
 		const { line, character } = range[cursorPosition];
 
 		this.textEditor.selection = new Selection(
