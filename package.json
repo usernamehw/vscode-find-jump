@@ -79,12 +79,14 @@
 					"default": "start",
 					"enum": [
 						"start",
-						"end"
+						"end",
+						"selection-end"
 					],
 					"description": "Place where to jump cursor.",
 					"enumDescriptions": [
 						"Jump to the start of the range.",
-						"Jump to the end of the range."
+						"Jump to the end of the range.",
+						"Start of the range on jump, end of the range on selection."
 					]
 				},
 				"findJump.letterBackground": {
